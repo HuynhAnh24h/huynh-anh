@@ -77,48 +77,48 @@ export function Hero({ profile }: HeroProps) {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Top Company Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30">
+              <span className="w-2 h-2 rounded-full bg-[#a0620f] dark:bg-[#f5b942] animate-pulse" />
               <span>{lang === 'vi' ? 'Frontend Developer tại Digital Creations' : 'Frontend Developer at Digital Creations'}</span>
             </div>
 
             {/* Main Greeting & Name */}
             <div>
-              <p className="text-sm md:text-base font-mono font-medium text-emerald-600 dark:text-emerald-400 mb-1">
+              <p className="text-sm md:text-base font-mono font-medium text-[#a0620f] dark:text-[#f5b942] mb-1">
                 {t.hero.greeting}
               </p>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.08]">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#2a1f14] dark:text-[#f5ece4] leading-[1.08]">
                 {profile.fullName}
               </h1>
             </div>
 
             {/* Dynamic Typing Role */}
-            <div className="text-lg sm:text-2xl font-medium text-slate-700 dark:text-slate-300 flex items-center min-h-[44px]">
+            <div className="text-lg sm:text-2xl font-medium text-[#2a1f14] dark:text-[#f5ece4] flex items-center min-h-[44px]">
               <span>{t.hero.roleIntro}&nbsp;</span>
-              <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+              <span className="font-semibold text-[#a0620f] dark:text-[#f5b942]">
                 {currentText}
               </span>
-              <span className="w-0.5 h-6 bg-emerald-500 ml-1 animate-cursor inline-block" />
+              <span className="w-0.5 h-6 bg-[#a0620f] dark:bg-[#f5b942] ml-1 animate-cursor inline-block" />
             </div>
 
             {/* Short Bio */}
-            <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+            <p className="text-base md:text-lg text-[#786352] dark:text-[#b5a393] leading-relaxed max-w-xl">
               {profile.shortBio[lang] || profile.shortBio.vi}
             </p>
 
             {/* Capability highlights pills */}
             <div className="flex flex-wrap gap-2 text-xs font-medium">
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                <Smartphone className="w-3.5 h-3.5 text-emerald-500" />
-                <span>{lang === 'vi' ? 'Ứng dụng Mobile (React Native)' : 'Mobile Apps (React Native)'}</span>
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f]">
+                <Smartphone className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
+                <span>{lang === 'vi' ? 'Ứng dụng Mobile & Website' : 'Mobile Apps & Websites'}</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                <Globe2 className="w-3.5 h-3.5 text-blue-500" />
-                <span>{lang === 'vi' ? 'Website & Web Apps (Next.js/React)' : 'Websites & Apps (Next.js/React)'}</span>
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f]">
+                <Globe2 className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
+                <span>Theme WordPress & WooCommerce</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                <Sparkles className="w-3.5 h-3.5 text-purple-500" />
-                <span>Shopify & WordPress</span>
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f]">
+                <Sparkles className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
+                <span>React, TypeScript & Node.js</span>
               </div>
             </div>
 
@@ -126,24 +126,24 @@ export function Hero({ profile }: HeroProps) {
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-emerald-500 hover:bg-emerald-600 active:scale-98 text-white shadow-lg shadow-emerald-500/25 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#a0620f] hover:bg-[#854f0a] dark:bg-[#f5b942] dark:hover:bg-[#df9b20] active:scale-98 text-white dark:text-[#15110e] shadow-lg shadow-[#a0620f]/20 dark:shadow-[#f5b942]/25 transition-all duration-200"
               >
                 <span>{t.hero.contactBtn}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-emerald-500/60 text-slate-800 dark:text-slate-200 hover:text-emerald-500 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f] dark:hover:border-[#f5b942] text-[#2a1f14] dark:text-[#f5ece4] hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-all duration-200"
               >
                 <span>{t.hero.viewProjectsBtn}</span>
               </Link>
             </div>
 
             {/* Quick Contact Info */}
-            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200/80 dark:border-slate-800/80">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#786352] dark:text-[#b5a393] pt-2 border-t border-[#e7dcce] dark:border-[#33281f]">
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors"
+                className="flex items-center gap-1.5 hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 {profile.email}
@@ -151,7 +151,7 @@ export function Hero({ profile }: HeroProps) {
               <span className="hidden sm:inline">•</span>
               <a
                 href={`tel:${profile.phone.replace(/\s+/g, '')}`}
-                className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors"
+                className="flex items-center gap-1.5 hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 {profile.phone}
@@ -167,27 +167,27 @@ export function Hero({ profile }: HeroProps) {
 
           {/* Right Column: Interactive Terminal Card */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl dark:shadow-2xl dark:shadow-emerald-950/20">
+            <div className="relative rounded-2xl overflow-hidden border border-[#e7dcce] dark:border-[#33281f] bg-[#221a14] dark:bg-[#120e0b] shadow-xl dark:shadow-2xl">
               
               {/* Terminal Title Bar */}
-              <div className="flex items-center justify-between px-4 py-3 bg-slate-100 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800">
+              <div className="flex items-center justify-between px-4 py-3 bg-[#1a1410] dark:bg-[#0a0806] border-b border-[#33281f]">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-[#f5b942]" />
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 font-mono text-xs text-slate-500 dark:text-slate-400">
+                  <span className="ml-2 font-mono text-xs text-[#b5a393]">
                     huynhanh.profile.ts
                   </span>
                 </div>
                 <button
                   onClick={copyCode}
-                  className="flex items-center gap-1 text-[11px] font-mono text-slate-400 hover:text-emerald-500 transition-colors"
+                  className="flex items-center gap-1 text-[11px] font-mono text-[#b5a393] hover:text-[#f5b942] transition-colors cursor-pointer"
                   title="Copy code snippet"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-500" />
-                      <span className="text-emerald-500">Copied</span>
+                      <Check className="w-3.5 h-3.5 text-[#f5b942]" />
+                      <span className="text-[#f5b942]">Copied</span>
                     </>
                   ) : (
                     <>
@@ -199,70 +199,71 @@ export function Hero({ profile }: HeroProps) {
               </div>
 
               {/* Terminal Code Content */}
-              <div className="p-5 font-mono text-[12.5px] sm:text-xs leading-relaxed overflow-x-auto text-slate-800 dark:text-slate-200 bg-slate-50/50 dark:bg-slate-950/70">
+              <div className="p-5 font-mono text-[12.5px] sm:text-xs leading-relaxed overflow-x-auto text-[#f5ece4] bg-[#221a14] dark:bg-[#120e0b]">
                 <div>
-                  <span className="text-purple-600 dark:text-purple-400">export const </span>
-                  <span className="text-blue-600 dark:text-blue-400">developer</span>
-                  <span className="text-slate-600 dark:text-slate-400">: </span>
-                  <span className="text-yellow-600 dark:text-yellow-400">DeveloperProfile</span>
-                  <span className="text-slate-600 dark:text-slate-400"> = {'{'}</span>
+                  <span className="text-[#ff7ab2]">export const </span>
+                  <span className="text-[#7dd3fc]">developer</span>
+                  <span className="text-[#b5a393]">: </span>
+                  <span className="text-[#f5b942]">DeveloperProfile</span>
+                  <span className="text-[#b5a393]"> = {'{'}</span>
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">name: </span>
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Huỳnh Anh&quot;</span>,
+                  <span className="text-[#b5a393]">name: </span>
+                  <span className="text-[#f5b942]">&quot;Huỳnh Anh&quot;</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">currentRole: </span>
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Frontend Developer&quot;</span>,
+                  <span className="text-[#b5a393]">currentRole: </span>
+                  <span className="text-[#f5b942]">&quot;Frontend Developer&quot;</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">company: </span>
-                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold">&quot;Digital Creations&quot;</span>,
+                  <span className="text-[#b5a393]">company: </span>
+                  <span className="text-[#f5b942] font-semibold">&quot;Digital Creations&quot;</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">specialties: </span>
-                  <span className="text-slate-600 dark:text-slate-400">[</span>
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Mobile Apps&quot;</span>
-                  <span className="text-slate-600 dark:text-slate-400">, </span>
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Web Development&quot;</span>
-                  <span className="text-slate-600 dark:text-slate-400">]</span>,
+                  <span className="text-[#b5a393]">specialties: </span>
+                  <span className="text-[#b5a393]">[</span>
+                  <span className="text-[#f5b942]">&quot;Theme WordPress&quot;</span>
+                  <span className="text-[#b5a393]">, </span>
+                  <span className="text-[#f5b942]">&quot;React & TypeScript&quot;</span>
+                  <span className="text-[#b5a393]">]</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">techStack: </span>
-                  <span className="text-slate-600 dark:text-slate-400">[</span>
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Next.js&quot;</span>,{' '}
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;React Native&quot;</span>,{' '}
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;TypeScript&quot;</span>,{' '}
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Supabase&quot;</span>
-                  <span className="text-slate-600 dark:text-slate-400">]</span>,
+                  <span className="text-[#b5a393]">techStack: </span>
+                  <span className="text-[#b5a393]">[</span>
+                  <span className="text-[#f5b942]">&quot;React&quot;</span>,{' '}
+                  <span className="text-[#f5b942]">&quot;Redux Toolkit&quot;</span>,{' '}
+                  <span className="text-[#f5b942]">&quot;Node.js&quot;</span>,{' '}
+                  <span className="text-[#f5b942]">&quot;MongoDB&quot;</span>
+                  <span className="text-[#b5a393]">]</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">cms: </span>
-                  <span className="text-slate-600 dark:text-slate-400">[</span>
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Shopify Theme&quot;</span>,{' '}
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;WordPress&quot;</span>
-                  <span className="text-slate-600 dark:text-slate-400">]</span>,
+                  <span className="text-[#b5a393]">cms: </span>
+                  <span className="text-[#b5a393]">[</span>
+                  <span className="text-[#f5b942]">&quot;WordPress Custom&quot;</span>,{' '}
+                  <span className="text-[#f5b942]">&quot;WooCommerce&quot;</span>,{' '}
+                  <span className="text-[#f5b942]">&quot;Flatsome&quot;</span>
+                  <span className="text-[#b5a393]">]</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">status: </span>
-                  <span className="text-emerald-600 dark:text-emerald-400">&quot;Active & Open to collaborate&quot;</span>,
+                  <span className="text-[#b5a393]">status: </span>
+                  <span className="text-[#f5b942]">&quot;Active & Open to collaborate&quot;</span>,
                 </div>
                 <div>
-                  <span className="text-slate-600 dark:text-slate-400">{'}'};</span>
+                  <span className="text-[#b5a393]">{'}'};</span>
                 </div>
-                <div className="pt-2 text-slate-400 dark:text-slate-500 text-[11px]">
+                <div className="pt-2 text-[#b5a393]/70 text-[11px]">
                   // Contact: anhdev24h@gmail.com | 0776 980 269
                 </div>
               </div>
 
               {/* Status footer inside card */}
-              <div className="px-4 py-2.5 bg-slate-100/60 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
-                <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
+              <div className="px-4 py-2.5 bg-[#1a1410] dark:bg-[#0a0806] border-t border-[#33281f] flex items-center justify-between text-xs">
+                <span className="flex items-center gap-1.5 text-[#f5b942] font-medium">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   {t.hero.statusAvailable}
                 </span>
-                <span className="text-slate-400 text-[11px] font-mono">
-                  TypeScript • Supabase Ready
+                <span className="text-[#b5a393] text-[11px] font-mono">
+                  WordPress • React • Node
                 </span>
               </div>
 

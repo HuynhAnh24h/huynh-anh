@@ -56,7 +56,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-slate-900 dark:text-slate-100 selection:bg-emerald-500 selection:text-white">
+    <div className="relative min-h-screen text-[#2a1f14] dark:text-[#f5ece4] bg-[#f8f3ec] dark:bg-[#15110e] selection:bg-[#f5b942] selection:text-[#15110e]">
       {/* Background Interactive Particle Network */}
       <ParticleCanvas />
 

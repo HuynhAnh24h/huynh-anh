@@ -37,7 +37,7 @@ export function Projects({ projects }: ProjectsProps) {
   const getCategoryBadge = (cat: ProjectItem['category']) => {
     switch (cat) {
       case 'mobile':
-        return { label: 'Mobile App', color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' };
+        return { label: 'Mobile App', color: 'bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border-[#a0620f]/30 dark:border-[#f5b942]/30' };
       case 'web':
         return { label: 'Web & App', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30' };
       case 'shopify':
@@ -50,19 +50,19 @@ export function Projects({ projects }: ProjectsProps) {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-28 bg-slate-50/50 dark:bg-slate-900/30">
+    <section id="projects" className="py-20 md:py-28 bg-[#f2eae0]/40 dark:bg-[#120e0b]/40">
       <div className="max-w-6xl mx-auto px-5">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30 mb-3">
             <FolderGit2 className="w-3.5 h-3.5" />
             <span>{t.projects.title}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2a1f14] dark:text-[#f5ece4]">
             {t.projects.title}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-xl">
+          <p className="mt-4 text-base sm:text-lg text-[#786352] dark:text-[#b5a393] max-w-xl">
             {t.projects.subtitle}
           </p>
         </div>
@@ -76,10 +76,10 @@ export function Projects({ projects }: ProjectsProps) {
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 border ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 border cursor-pointer ${
                   isActive
-                    ? 'bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-500/25'
-                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700'
+                    ? 'bg-[#a0620f] dark:bg-[#f5b942] text-white dark:text-[#15110e] border-transparent shadow-md shadow-[#f5b942]/20 font-bold'
+                    : 'bg-white dark:bg-[#1e1813] border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-[#2a1f14] dark:hover:text-[#f5ece4] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -91,7 +91,7 @@ export function Projects({ projects }: ProjectsProps) {
 
         {/* Projects Grid */}
         {filtered.length === 0 ? (
-          <div className="text-center py-16 text-slate-500 dark:text-slate-400 text-sm">
+          <div className="text-center py-16 text-[#786352] dark:text-[#b5a393] text-sm">
             {t.projects.empty}
           </div>
         ) : (
@@ -104,7 +104,7 @@ export function Projects({ projects }: ProjectsProps) {
               return (
                 <div
                   key={proj.id}
-                  className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 overflow-hidden hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                  className="group rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white/95 dark:bg-[#1e1813]/95 overflow-hidden hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div className="p-6">
                     {/* Top Row: Category badge & Featured indicator */}
@@ -113,7 +113,7 @@ export function Projects({ projects }: ProjectsProps) {
                         {badge.label}
                       </span>
                       {proj.featured && (
-                        <span className="flex items-center gap-1 text-[11px] font-semibold text-amber-500 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                        <span className="flex items-center gap-1 text-[11px] font-semibold text-[#a0620f] dark:text-[#f5b942] bg-[#a0620f]/10 dark:bg-[#f5b942]/15 px-2 py-0.5 rounded-full border border-[#a0620f]/20 dark:border-[#f5b942]/30">
                           <Sparkles className="w-2.5 h-2.5" />
                           {t.projects.featuredBadge}
                         </span>
@@ -121,12 +121,12 @@ export function Projects({ projects }: ProjectsProps) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+                    <h3 className="font-bold text-lg text-[#2a1f14] dark:text-[#f5ece4] group-hover:text-[#a0620f] dark:group-hover:text-[#f5b942] transition-colors">
                       {title}
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                    <p className="mt-2 text-xs sm:text-sm text-[#786352] dark:text-[#b5a393] leading-relaxed line-clamp-3">
                       {description}
                     </p>
 
@@ -136,7 +136,7 @@ export function Projects({ projects }: ProjectsProps) {
                         {proj.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="font-mono text-[10px] px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60"
+                            className="font-mono text-[10px] px-2 py-0.5 rounded-md bg-[#f8f3ec] dark:bg-[#272019] text-[#786352] dark:text-[#b5a393] border border-[#e7dcce] dark:border-[#33281f]"
                           >
                             {tag}
                           </span>
@@ -146,14 +146,14 @@ export function Projects({ projects }: ProjectsProps) {
                   </div>
 
                   {/* Card Actions Footer */}
-                  <div className="p-4 px-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 flex items-center justify-between">
+                  <div className="p-4 px-6 border-t border-[#e7dcce]/60 dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       {proj.liveUrl && (
                         <a
                           href={proj.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
+                          className="flex items-center gap-1.5 text-xs font-bold text-[#a0620f] dark:text-[#f5b942] hover:underline"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
                           <span>{t.projects.viewLive}</span>
@@ -164,7 +164,7 @@ export function Projects({ projects }: ProjectsProps) {
                           href={proj.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="flex items-center gap-1.5 text-xs font-semibold text-[#786352] dark:text-[#b5a393] hover:text-[#2a1f14] dark:hover:text-[#f5ece4]"
                         >
                           <GithubIcon className="w-3.5 h-3.5" />
                           <span>{t.projects.sourceCode}</span>

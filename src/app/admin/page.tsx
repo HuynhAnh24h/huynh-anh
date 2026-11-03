@@ -109,8 +109,8 @@ export default function AdminPage() {
 
   if (checkingAuth) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950">
-        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 border-t-transparent animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-[#f8f3ec] dark:bg-[#15110e]">
+        <div className="w-8 h-8 rounded-full border-2 border-[#a0620f] dark:border-[#f5b942] border-t-transparent animate-spin" />
       </div>
     );
   }
@@ -118,12 +118,12 @@ export default function AdminPage() {
   // LOGIN SCREEN
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex flex-col justify-between bg-slate-50 dark:bg-slate-950 p-4 relative">
+      <div className="min-h-screen flex flex-col justify-between bg-[#f8f3ec] dark:bg-[#15110e] p-4 relative">
         {/* Top bar controls */}
         <div className="max-w-md w-full mx-auto flex items-center justify-between pt-4">
           <a
             href="/"
-            className="text-xs font-semibold text-slate-500 hover:text-emerald-500 transition-colors"
+            className="text-xs font-semibold text-[#786352] dark:text-[#b5a393] hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-colors"
           >
             ← {t.admin.backToSite}
           </a>
@@ -135,15 +135,15 @@ export default function AdminPage() {
 
         {/* Center Login Box */}
         <div className="max-w-md w-full mx-auto my-auto py-10">
-          <div className="p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 shadow-2xl space-y-6">
+          <div className="p-8 rounded-3xl border border-[#e7dcce] dark:border-[#33281f] bg-white/95 dark:bg-[#1e1813]/95 shadow-2xl space-y-6">
             <div className="text-center space-y-2">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mx-auto flex items-center justify-center shadow-inner">
+              <div className="w-14 h-14 rounded-2xl bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] mx-auto flex items-center justify-center shadow-inner">
                 <ShieldCheck className="w-7 h-7" />
               </div>
-              <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h1 className="text-2xl font-bold text-[#2a1f14] dark:text-[#f5ece4]">
                 {t.admin.loginTitle}
               </h1>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-[#786352] dark:text-[#b5a393]">
                 {t.admin.loginSubtitle}
               </p>
             </div>
@@ -157,40 +157,40 @@ export default function AdminPage() {
 
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1.5">
                   {t.admin.email}
                 </label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
+                  <Mail className="w-4 h-4 absolute left-3.5 top-3 text-[#786352] dark:text-[#b5a393]" />
                   <input
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="anhdev24h@gmail.com"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1.5">
                   {t.admin.password}
                 </label>
                 <div className="relative">
-                  <Lock className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
+                  <Lock className="w-4 h-4 absolute left-3.5 top-3 text-[#786352] dark:text-[#b5a393]" />
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl font-semibold text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="w-full py-3 rounded-xl font-semibold text-sm bg-[#a0620f] dark:bg-[#f5b942] hover:bg-[#85510c] dark:hover:bg-[#df9b20] text-white dark:text-[#15110e] shadow-lg shadow-[#a0620f]/20 flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
                 <span>{t.admin.loginBtn}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -199,25 +199,25 @@ export default function AdminPage() {
 
             <div className="pt-2 text-center">
               <div className="relative flex py-2 items-center">
-                <div className="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
-                <span className="flex-shrink mx-3 text-[11px] text-slate-400 uppercase font-mono">
+                <div className="flex-grow border-t border-[#e7dcce] dark:border-[#33281f]"></div>
+                <span className="flex-shrink mx-3 text-[11px] text-[#786352] dark:text-[#b5a393] uppercase font-mono">
                   {lang === 'vi' ? 'Hoặc' : 'Or'}
                 </span>
-                <div className="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+                <div className="flex-grow border-t border-[#e7dcce] dark:border-[#33281f]"></div>
               </div>
 
               <button
                 onClick={handleDemoLogin}
-                className="w-full mt-2 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:border-emerald-500/50 hover:text-emerald-500 transition-colors flex items-center justify-center gap-1.5"
+                className="w-full mt-2 py-2.5 rounded-xl border border-[#e7dcce] dark:border-[#33281f] text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
+                <Sparkles className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
                 <span>{t.admin.demoLoginBtn}</span>
               </button>
             </div>
           </div>
         </div>
 
-        <div className="text-center text-xs text-slate-400 pb-4">
+        <div className="text-center text-xs text-[#786352] dark:text-[#b5a393] pb-4">
           Portfolio Huỳnh Anh • Frontend Developer tại Digital Creations
         </div>
       </div>
@@ -228,7 +228,7 @@ export default function AdminPage() {
   const unreadCount = messages.filter((m) => !m.isRead).length;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+    <div className="min-h-screen bg-[#f8f3ec] dark:bg-[#15110e] text-[#2a1f14] dark:text-[#f5ece4]">
       <AdminNavbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}

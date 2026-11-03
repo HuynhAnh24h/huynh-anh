@@ -3,23 +3,31 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-primary: #f8fafc;
+  --bg-primary: #f8f3ec;
   --bg-surface: #ffffff;
-  --text-primary: #0f172a;
-  --text-muted: #64748b;
-  --accent-emerald: #10b981;
-  --accent-glow: rgba(16, 185, 129, 0.15);
-  --border-subtle: #e2e8f0;
+  --bg-surface-subtle: #f2eae0;
+  --text-primary: #2a1f14;
+  --text-muted: #786352;
+  --accent: #a0620f;
+  --accent-contrast: #ffffff;
+  --accent-glow: rgba(160, 98, 15, 0.16);
+  --border-subtle: #e7dcce;
+  --code-bg: #221a14;
+  --code-text: #f5ece4;
 }
 
 .dark {
-  --bg-primary: #090d16;
-  --bg-surface: #0f172a;
-  --text-primary: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent-emerald: #10b981;
-  --accent-glow: rgba(16, 185, 129, 0.25);
-  --border-subtle: #1e293b;
+  --bg-primary: #15110e;
+  --bg-surface: #1e1813;
+  --bg-surface-subtle: #272019;
+  --text-primary: #f5ece4;
+  --text-muted: #b5a393;
+  --accent: #f5b942;
+  --accent-contrast: #15110e;
+  --accent-glow: rgba(245, 185, 66, 0.22);
+  --border-subtle: #33281f;
+  --code-bg: #120e0b;
+  --code-text: #f5ece4;
 }
 
 html {
@@ -34,19 +42,19 @@ body {
   min-height: 100vh;
 }
 
-/* Glassmorphism helpers */
+/* Glassmorphism helpers for Earth palette */
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid rgba(231, 220, 206, 0.8);
 }
 
 .dark .glass-panel {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(30, 24, 19, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(51, 40, 31, 0.8);
 }
 
 /* Custom Scrollbar */
@@ -60,25 +68,31 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d8c9b9;
   border-radius: 9999px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #33281f;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: var(--accent);
 }
 
 /* Glow effects */
-.glow-emerald {
-  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+.glow-earth {
+  box-shadow: 0 0 25px -5px rgba(160, 98, 15, 0.2);
 }
 
-.dark .glow-emerald {
-  box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.35);
+.dark .glow-earth {
+  box-shadow: 0 0 35px -5px rgba(245, 185, 66, 0.25);
+}
+
+/* Selection color */
+::selection {
+  background: #f5b942;
+  color: #15110e;
 }
 
 /* Code block terminal cursor */

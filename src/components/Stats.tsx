@@ -35,7 +35,7 @@ export function Stats() {
   ];
 
   return (
-    <section className="py-8 border-y border-slate-200/80 dark:border-slate-800/80 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xs">
+    <section className="py-8 border-y border-[#e7dcce] dark:border-[#33281f] bg-white/40 dark:bg-[#15110e]/40 backdrop-blur-xs">
       <div className="max-w-6xl mx-auto px-5">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {stats.map((item, idx) => {
@@ -43,20 +43,20 @@ export function Stats() {
             return (
               <div
                 key={idx}
-                className="p-4 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-900/70 hover:border-emerald-500/40 transition-colors"
+                className="p-4 rounded-xl border border-[#e7dcce]/80 dark:border-[#33281f]/80 bg-white/80 dark:bg-[#1e1813]/80 hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 transition-colors"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 tracking-tight font-mono">
+                  <span className="text-3xl md:text-4xl font-extrabold text-[#a0620f] dark:text-[#f5b942] tracking-tight font-mono">
                     {item.value}
                   </span>
-                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                  <div className="p-2 rounded-lg bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942]">
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
-                <h3 className="font-semibold text-sm text-slate-800 dark:text-slate-200">
+                <h3 className="font-semibold text-sm text-[#2a1f14] dark:text-[#f5ece4]">
                   {item.label}
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">
+                <p className="text-xs text-[#786352] dark:text-[#b5a393] mt-1 line-clamp-1">
                   {item.desc}
                 </p>
               </div>

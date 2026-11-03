@@ -112,10 +112,10 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
       {/* Top Banner and Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#2a1f14] dark:text-[#f5ece4]">
             {t.admin.projectsTab}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+          <p className="text-xs sm:text-sm text-[#786352] dark:text-[#b5a393]">
             {lang === 'vi'
               ? 'Thêm, sửa, xóa hoặc sắp xếp các dự án hiển thị trên trang Portfolio của bạn.'
               : 'Add, update, reorder or remove projects featured on your public portfolio.'}
@@ -124,7 +124,7 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
 
         <button
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-md shadow-emerald-500/20 transition-all cursor-pointer"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-[#a0620f] dark:bg-[#f5b942] hover:bg-[#85510c] dark:hover:bg-[#df9b20] text-white dark:text-[#15110e] shadow-md shadow-[#a0620f]/20 transition-all cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>{t.admin.addProject}</span>
@@ -135,12 +135,12 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
         <div
           className={`p-3.5 rounded-xl text-xs sm:text-sm flex items-center justify-between ${
             message.type === 'success'
-              ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800'
+              ? 'bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/30 dark:border-[#f5b942]/30'
               : 'bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800'
           }`}
         >
           <span>{message.text}</span>
-          <button onClick={() => setMessage(null)}>
+          <button onClick={() => setMessage(null)} className="cursor-pointer">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -149,20 +149,20 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
       {/* Filter and Search Bar */}
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
-          <Search className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
+          <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#786352] dark:text-[#b5a393]" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={lang === 'vi' ? 'Tìm theo tên dự án hoặc công nghệ...' : 'Search by title or tech stack...'}
-            className="w-full pl-10 pr-4 py-2 rounded-xl text-xs sm:text-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+            className="w-full pl-10 pr-4 py-2 rounded-xl text-xs sm:text-sm border border-[#e7dcce] dark:border-[#33281f] bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
           />
         </div>
 
         <select
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
-          className="px-3 py-2 rounded-xl text-xs sm:text-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+          className="px-3 py-2 rounded-xl text-xs sm:text-sm border border-[#e7dcce] dark:border-[#33281f] bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942] cursor-pointer"
         >
           <option value="all">{lang === 'vi' ? 'Tất cả danh mục' : 'All Categories'}</option>
           <option value="mobile">{lang === 'vi' ? 'Ứng dụng Mobile' : 'Mobile Apps'}</option>
@@ -177,30 +177,30 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
         {filtered.map((proj) => (
           <div
             key={proj.id}
-            className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
+            className="p-4 sm:p-5 rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white dark:bg-[#1e1813] flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors"
           >
             <div className="space-y-1.5 flex-1">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="font-bold text-base text-slate-900 dark:text-white">
+                <span className="font-bold text-base text-[#2a1f14] dark:text-[#f5ece4]">
                   {proj.title}
                 </span>
                 {proj.titleEn && proj.titleEn !== proj.title && (
-                  <span className="text-xs text-slate-400 font-mono">
+                  <span className="text-xs text-[#786352] dark:text-[#b5a393] font-mono">
                     ({proj.titleEn})
                   </span>
                 )}
-                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-[#f8f3ec] dark:bg-[#251e17] text-[#786352] dark:text-[#b5a393] border border-[#e7dcce] dark:border-[#33281f]">
                   {proj.category}
                 </span>
                 {proj.featured && (
-                  <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/30 dark:border-[#f5b942]/30">
                     <Sparkles className="w-2.5 h-2.5" />
                     Featured
                   </span>
                 )}
               </div>
 
-              <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">
+              <p className="text-xs text-[#786352] dark:text-[#b5a393] line-clamp-2">
                 {proj.description}
               </p>
 
@@ -208,7 +208,7 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
                 {proj.tags?.map((t) => (
                   <span
                     key={t}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                    className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#f8f3ec] dark:bg-[#251e17] text-[#786352] dark:text-[#b5a393] border border-[#e7dcce]/60 dark:border-[#33281f]/60"
                   >
                     {t}
                   </span>
@@ -217,13 +217,13 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-2 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
+            <div className="flex items-center gap-2 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-[#e7dcce]/50 dark:border-[#33281f]/80">
               {proj.liveUrl && (
                 <a
                   href={proj.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-emerald-500 transition-colors"
+                  className="p-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-[#a0620f] dark:hover:text-[#f5b942] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors"
                   title="Xem Live"
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -234,7 +234,7 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
                   href={proj.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors"
+                  className="p-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-[#2a1f14] dark:hover:text-[#f5ece4] transition-colors"
                   title="Source Code"
                 >
                   <GithubIcon className="w-4 h-4" />
@@ -242,14 +242,14 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
               )}
               <button
                 onClick={() => handleOpenEdit(proj)}
-                className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:border-emerald-500/40 transition-colors"
+                className="p-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-[#a0620f] dark:hover:text-[#f5b942] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors cursor-pointer"
                 title={t.admin.editProject}
               >
                 <Edit3 className="w-4 h-4" />
               </button>
               <button
                 onClick={() => handleDelete(proj.id, proj.title)}
-                className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-rose-500 hover:border-rose-500/40 transition-colors"
+                className="p-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-rose-500 hover:border-rose-500/40 transition-colors cursor-pointer"
                 title={t.admin.deleteProject}
               >
                 <Trash2 className="w-4 h-4" />
@@ -262,15 +262,15 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
       {/* Edit / Add Modal */}
       {isModalOpen && editingProject && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="w-full max-w-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-6 my-8 space-y-5">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-              <h3 className="font-bold text-lg text-slate-900 dark:text-white flex items-center gap-2">
-                <Layers className="w-5 h-5 text-emerald-500" />
+          <div className="w-full max-w-2xl bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] rounded-2xl shadow-2xl p-6 my-8 space-y-5">
+            <div className="flex items-center justify-between pb-3 border-b border-[#e7dcce] dark:border-[#33281f]">
+              <h3 className="font-bold text-lg text-[#2a1f14] dark:text-[#f5ece4] flex items-center gap-2">
+                <Layers className="w-5 h-5 text-[#a0620f] dark:text-[#f5b942]" />
                 {editingProject.id ? t.admin.editProject : t.admin.addProject}
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                className="p-1.5 rounded-lg text-[#786352] dark:text-[#b5a393] hover:text-[#2a1f14] dark:hover:text-[#f5ece4] cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -279,7 +279,7 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
             <form onSubmit={handleSave} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                     Tên dự án (Tiếng Việt) *
                   </label>
                   <input
@@ -287,31 +287,31 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
                     required
                     value={editingProject.title || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, title: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                     Project Title (English)
                   </label>
                   <input
                     type="text"
                     value={editingProject.titleEn || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, titleEn: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                   />
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                     Danh mục (Category)
                   </label>
                   <select
                     value={editingProject.category || 'web'}
                     onChange={(e) => setEditingProject({ ...editingProject, category: e.target.value as ProjectItem['category'] })}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942] cursor-pointer"
                   >
                     <option value="mobile">Ứng dụng Mobile (React Native / Cross-platform)</option>
                     <option value="web">Website & Web App (Next.js / React)</option>
@@ -320,7 +320,7 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                     Tags công nghệ (ngăn cách bằng dấu phẩy)
                   </label>
                   <input
@@ -328,38 +328,38 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
                     value={tagsInput}
                     onChange={(e) => setTagsInput(e.target.value)}
                     placeholder="React, Next.js, TypeScript, Tailwind"
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                   Mô tả dự án (Tiếng Việt)
                 </label>
                 <textarea
                   rows={2}
                   value={editingProject.description || ''}
                   onChange={(e) => setEditingProject({ ...editingProject, description: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                  className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                   Description (English)
                 </label>
                 <textarea
                   rows={2}
                   value={editingProject.descriptionEn || ''}
                   onChange={(e) => setEditingProject({ ...editingProject, descriptionEn: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                  className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                 />
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                     Link Live Demo / Website
                   </label>
                   <input
@@ -367,11 +367,11 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
                     value={editingProject.liveUrl || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, liveUrl: e.target.value })}
                     placeholder="https://..."
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] mb-1">
                     Link GitHub / Source Code
                   </label>
                   <input
@@ -379,35 +379,35 @@ export function ProjectManager({ projects, onRefresh }: ProjectManagerProps) {
                     value={editingProject.githubUrl || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, githubUrl: e.target.value })}
                     placeholder="https://github.com/..."
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                    className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/60 dark:bg-[#15110e]/60 text-[#2a1f14] dark:text-[#f5ece4] text-sm focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
                   />
                 </div>
               </div>
 
               <div className="flex items-center gap-6 pt-2">
-                <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 cursor-pointer">
+                <label className="flex items-center gap-2 text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4] cursor-pointer">
                   <input
                     type="checkbox"
                     checked={editingProject.featured || false}
                     onChange={(e) => setEditingProject({ ...editingProject, featured: e.target.checked })}
-                    className="rounded text-emerald-500 focus:ring-emerald-500/40"
+                    className="rounded accent-[#a0620f] dark:accent-[#f5b942]"
                   />
                   <span>Đánh dấu Dự án Nổi bật (Featured)</span>
                 </label>
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex justify-end gap-3 pt-4 border-t border-[#e7dcce] dark:border-[#33281f]">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="px-4 py-2 rounded-xl text-xs font-semibold border border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:bg-[#f8f3ec] dark:hover:bg-[#251e17] transition-colors cursor-pointer"
                 >
                   Hủy
                 </button>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-5 py-2 rounded-xl text-xs font-semibold bg-emerald-500 hover:bg-emerald-600 text-white shadow-md shadow-emerald-500/20 flex items-center gap-1.5 transition-colors"
+                  className="px-5 py-2 rounded-xl text-xs font-semibold bg-[#a0620f] dark:bg-[#f5b942] hover:bg-[#85510c] dark:hover:bg-[#df9b20] text-white dark:text-[#15110e] shadow-md shadow-[#a0620f]/20 flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <Check className="w-4 h-4" />
                   <span>{loading ? 'Đang lưu...' : t.admin.saveChanges}</span>

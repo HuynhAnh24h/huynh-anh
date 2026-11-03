@@ -43,24 +43,24 @@ export function AdminNavbar({
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/95 dark:bg-[#15110e]/95 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         
         {/* Left Branding */}
         <div className="flex items-center gap-3">
           <Link
             href="/"
-            className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 text-slate-600 dark:text-slate-300 hover:text-emerald-500 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 text-[#786352] dark:text-[#b5a393] hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>{t.admin.backToSite}</span>
           </Link>
 
-          <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-slate-200 dark:border-slate-800">
-            <div className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+          <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-[#e7dcce] dark:border-[#33281f]">
+            <div className="p-1.5 rounded-lg bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942]">
               <ShieldCheck className="w-4 h-4" />
             </div>
-            <span className="font-bold text-sm text-slate-900 dark:text-white">
+            <span className="font-bold text-sm text-[#2a1f14] dark:text-[#f5ece4]">
               Admin Control Panel
             </span>
           </div>
@@ -75,10 +75,10 @@ export function AdminNavbar({
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all relative ${
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all relative cursor-pointer ${
                   isActive
-                    ? 'bg-emerald-500 text-white shadow-xs'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900'
+                    ? 'bg-[#a0620f] dark:bg-[#f5b942] text-white dark:text-[#15110e] font-bold shadow-xs'
+                    : 'text-[#786352] dark:text-[#b5a393] hover:text-[#2a1f14] dark:hover:text-[#f5ece4] hover:bg-[#f2eae0] dark:hover:bg-[#272019]'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -99,7 +99,7 @@ export function AdminNavbar({
           <ThemeToggle />
           <button
             onClick={onLogout}
-            className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 hover:border-rose-500/30 transition-colors"
+            className="p-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-rose-500 hover:border-rose-500/30 transition-colors cursor-pointer"
             title={t.admin.logout}
             aria-label={t.admin.logout}
           >

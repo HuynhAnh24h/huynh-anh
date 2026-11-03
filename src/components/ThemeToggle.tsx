@@ -21,7 +21,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="p-2 rounded-xl transition-all duration-200 border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+      className="p-2 rounded-xl transition-all duration-200 border border-[#e7dcce] dark:border-[#33281f] bg-white/80 dark:bg-[#1e1813]/80 hover:bg-[#f2eae0] dark:hover:bg-[#272019] text-[#2a1f14] dark:text-[#f5ece4] hover:text-[#a0620f] dark:hover:text-[#f5b942] focus:outline-none focus:ring-2 focus:ring-[#f5b942]/40 cursor-pointer"
       aria-label={isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
       title={isDark ? 'Chế độ Sáng' : 'Chế độ Tối'}
     >

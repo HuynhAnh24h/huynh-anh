@@ -48,7 +48,7 @@ export function ParticleCanvas() {
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const dotColor = isDark ? '#10b981' : '#059669';
+      const dotColor = isDark ? '#f5b942' : '#a0620f';
       ctx.fillStyle = dotColor;
       ctx.strokeStyle = dotColor;
 

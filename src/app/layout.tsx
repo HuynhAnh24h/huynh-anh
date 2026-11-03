@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body className="antialiased min-h-screen selection:bg-emerald-500 selection:text-white">
+      <body className="antialiased min-h-screen selection:bg-[#f5b942] selection:text-[#15110e] bg-[#f8f3ec] dark:bg-[#15110e] text-[#2a1f14] dark:text-[#f5ece4]">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <LanguageProvider>
             {children}

@@ -76,7 +76,7 @@ export function Skills({ skills }: SkillsProps) {
       case 'mongo':
         return <MongoIcon className="w-7 h-7 shrink-0" />;
       default:
-        return <Code2 className="w-7 h-7 text-emerald-500 shrink-0" />;
+        return <Code2 className="w-7 h-7 text-[#a0620f] dark:text-[#f5b942] shrink-0" />;
     }
   };
 
@@ -86,14 +86,14 @@ export function Skills({ skills }: SkillsProps) {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30 mb-3">
             <Terminal className="w-3.5 h-3.5" />
             <span>{t.skills.title}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#2a1f14] dark:text-[#f5ece4]">
             {t.skills.title}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-xl">
+          <p className="mt-4 text-base sm:text-lg text-[#786352] dark:text-[#b5a393] max-w-xl">
             {t.skills.subtitle}
           </p>
         </div>
@@ -109,8 +109,8 @@ export function Skills({ skills }: SkillsProps) {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 border cursor-pointer ${
                   isActive
-                    ? 'bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-500/25'
-                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700'
+                    ? 'bg-[#a0620f] dark:bg-[#f5b942] text-white dark:text-[#15110e] border-transparent shadow-md shadow-[#f5b942]/20 font-bold'
+                    : 'bg-white dark:bg-[#1e1813] border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-[#2a1f14] dark:hover:text-[#f5ece4] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -125,30 +125,30 @@ export function Skills({ skills }: SkillsProps) {
           {filteredSkills.map((skill) => (
             <div
               key={skill.id}
-              className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 hover:border-emerald-500/50 hover:shadow-xl transition-all duration-200 flex flex-col justify-between group"
+              className="p-5 sm:p-6 rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white/90 dark:bg-[#1e1813]/90 hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:shadow-xl transition-all duration-200 flex flex-col justify-between group"
             >
               <div>
                 {/* Header: Logo + Title + Percent */}
                 <div className="flex items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-slate-800 shadow-xs group-hover:scale-105 transition-transform">
+                    <div className="p-2.5 rounded-xl bg-[#f8f3ec] dark:bg-[#272019] border border-[#e7dcce] dark:border-[#33281f] shadow-xs group-hover:scale-105 transition-transform">
                       {renderIcon(skill.iconName)}
                     </div>
                     <div>
-                      <h3 className="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+                      <h3 className="font-bold text-base text-[#2a1f14] dark:text-[#f5ece4] group-hover:text-[#a0620f] dark:group-hover:text-[#f5b942] transition-colors">
                         {skill.name}
                       </h3>
                     </div>
                   </div>
 
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded-md bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30">
                     {skill.proficiency}%
                   </span>
                 </div>
 
                 {/* Subtitle / Details */}
                 {skill.subtitle && (
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
+                  <p className="text-xs text-[#786352] dark:text-[#b5a393] leading-relaxed mb-4">
                     {skill.subtitle}
                   </p>
                 )}
@@ -156,9 +156,9 @@ export function Skills({ skills }: SkillsProps) {
 
               {/* Progress Bar */}
               <div className="w-full pt-1">
-                <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                <div className="w-full h-2 rounded-full bg-[#f2eae0] dark:bg-[#272019] overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-1000"
+                    className="h-full rounded-full bg-gradient-to-r from-[#a0620f] to-[#f5b942] transition-all duration-1000"
                     style={{ width: `${skill.proficiency}%` }}
                   />
                 </div>
@@ -168,17 +168,17 @@ export function Skills({ skills }: SkillsProps) {
         </div>
 
         {/* Highlights banner */}
-        <div className="p-6 md:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-transparent flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-6 md:p-8 rounded-3xl border border-[#e7dcce] dark:border-[#33281f] bg-gradient-to-r from-[#a0620f]/10 via-[#f5b942]/10 to-transparent flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
-            <h4 className="font-bold text-base sm:text-lg text-slate-900 dark:text-white flex items-center justify-center md:justify-start gap-2">
-              <Sparkles className="w-4 h-4 text-emerald-500" />
+            <h4 className="font-bold text-base sm:text-lg text-[#2a1f14] dark:text-[#f5ece4] flex items-center justify-center md:justify-start gap-2">
+              <Sparkles className="w-4 h-4 text-[#a0620f] dark:text-[#f5b942]" />
               <span>
                 {lang === 'vi'
                   ? 'Kinh nghiệm thực chiến sâu với Theme WordPress & React Ecosystem'
                   : 'Deep production experience with WordPress Themes & React Ecosystem'}
               </span>
             </h4>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-2xl">
+            <p className="text-xs sm:text-sm text-[#786352] dark:text-[#b5a393] max-w-2xl">
               {lang === 'vi'
                 ? 'Tự tay lập trình và tùy biến giao diện từ bản vẽ Figma, tối ưu tốc độ tải trang, chuẩn SEO, tương thích mobile và kết nối REST API mượt mà.'
                 : 'Pixel-perfect development from Figma designs, high-speed page load optimization, strict SEO, mobile responsiveness, and fluid API integration.'}
@@ -188,7 +188,7 @@ export function Skills({ skills }: SkillsProps) {
           <div className="flex items-center gap-3 shrink-0">
             <a
               href="#projects"
-              className="px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-md shadow-emerald-500/20 transition-all"
+              className="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-[#a0620f] hover:bg-[#854f0a] dark:bg-[#f5b942] dark:hover:bg-[#df9b20] text-white dark:text-[#15110e] shadow-md shadow-[#f5b942]/20 transition-all"
             >
               {lang === 'vi' ? 'Xem các dự án đã làm' : 'View Related Projects'}
             </a>
