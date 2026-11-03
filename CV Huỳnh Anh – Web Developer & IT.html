@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Huỳnh Anh – Web Developer & IT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{--bg:#f4f7f5;--surface:#fff;--line:#d5dfd9;--text:#0f1a14;--muted:#52615a;--accent:#0a9f4f;--accent-ink:#fff;--glow:rgba(10,159,79,.14);--code:#0e1713;--code-text:#c9f5da;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1210;--surface:#111c18;--line:#1f3029;--text:#e8f3ed;--muted:#8fa89b;--accent:#2ee37a;--accent-ink:#04140b;--glow:rgba(46,227,122,.16);--code:#060d0a;--code-text:#c9f5da;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1210;--surface:#111c18;--line:#1f3029;--text:#e8f3ed;--muted:#8fa89b;--accent:#2ee37a;--accent-ink:#04140b;--glow:rgba(46,227,122,.16);--code:#060d0a;--code-text:#c9f5da;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;margin:0;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.muted{color:var(--muted)}.acc{color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:.2rem .75rem;font-size:.85rem;background:var(--surface)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.3rem;border-radius:10px;font-weight:600;border:1px solid var(--line);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.title{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
+.title::after{content:"";height:3px;width:56px;background:var(--accent);border-radius:3px}
+.tl{border-left:2px solid var(--line);padding-left:1.5rem;position:relative}
+.tl::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--glow)}
+.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:6px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.cursor{display:inline-block;width:8px;height:1em;background:var(--accent);vertical-align:-2px;animation:b 1s steps(1) infinite}
+@keyframes b{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}.bar i{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="font-bold text-lg mono"><span class="acc">&lt;</span>huynhanh<span class="acc">/&gt;</span></a>
+    <nav class="hidden md:flex gap-6 text-sm muted">
+      <a href="#exp" class="hover:text-[var(--accent)]">Kinh nghiệm</a>
+      <a href="#skills" class="hover:text-[var(--accent)]">Kỹ năng</a>
+      <a href="#projects" class="hover:text-[var(--accent)]">Dự án</a>
+      <a href="#edu" class="hover:text-[var(--accent)]">Học vấn</a>
+      <a href="#contact" class="hover:text-[var(--accent)]">Liên hệ</a>
+    </nav>
+    <button id="theme" class="chip" aria-label="Đổi giao diện sáng/tối">Sáng / Tối</button>
+  </div>
+</header>
+
+<main id="top" class="max-w-6xl mx-auto px-5">
+  <!-- HERO -->
+  <section class="grid lg:grid-cols-2 gap-10 items-center py-16 md:py-24">
+    <div>
+      <p class="muted mb-3">Xin chào, tôi là</p>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]">Huỳnh Anh</h1>
+      <p class="mt-5 text-xl md:text-2xl">Tôi làm <span id="role" class="acc font-semibold"></span><span class="cursor"></span></p>
+      <p class="muted mt-4 max-w-md">Trở thành một lập trình viên và nhân viên IT chuyên nghiệp. Hơn 3 năm làm website, Shopify, WordPress, React và vận hành hệ thống IT cho doanh nghiệp.</p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="#contact" class="btn btn-p">Liên hệ với tôi</a>
+        <a href="#projects" class="btn">Xem dự án</a>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-8">
+        <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Prisma</span><span class="chip">Shopify</span><span class="chip">WordPress</span>
+      </div>
+    </div>
+    <div class="rounded-2xl overflow-hidden border" style="background:var(--code);border-color:var(--line);box-shadow:0 20px 60px var(--glow)">
+      <div class="flex items-center gap-2 px-4 py-3 border-b" style="border-color:var(--line)">
+        <i class="w-3 h-3 rounded-full bg-red-400"></i><i class="w-3 h-3 rounded-full bg-yellow-400"></i><i class="w-3 h-3 rounded-full bg-green-400"></i>
+        <span class="mono text-xs ml-3" style="color:#8fa89b">profile.js</span>
+      </div>
+      <pre id="code" class="mono text-[13px] md:text-sm p-5 overflow-x-auto min-h-[300px]" style="color:var(--code-text)"></pre>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 pb-16">
+    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="3">0</div><div class="muted text-sm">năm kinh nghiệm</div></div>
+    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="4">0</div><div class="muted text-sm">công ty đã làm việc</div></div>
+    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="4">0</div><div class="muted text-sm">website WordPress</div></div>
+    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="2">0</div><div class="muted text-sm">ứng dụng React đã triển khai</div></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="exp" class="pb-20">
+    <h2 class="title">Kinh nghiệm làm việc</h2>
+    <div class="space-y-8">
+      <article class="tl">
+        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">React Developer (Freelancer)</h3><span class="mono text-sm muted">06/2024 – hiện tại</span></div>
+        <p class="muted text-sm mb-2">Làm việc tự do</p>
+        <ul class="list-disc pl-5 space-y-1 muted"><li>Lập trình giao diện người dùng UX/UI theo thiết kế mẫu Figma.</li><li>Làm việc với API, phối hợp với BE để kiểm soát, gọi và test API bằng Postman.</li><li>Cân đối thời gian giữa công việc tại công ty và tiến độ dự án cho khách hàng bên ngoài.</li></ul>
+      </article>
+      <article class="tl">
+        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">Nhân viên IT</h3><span class="mono text-sm muted">04/2024 – hiện tại</span></div>
+        <p class="muted text-sm mb-2">Công ty TNHH Kornbest Việt Nam</p>
+        <ul class="list-disc pl-5 space-y-1 muted"><li>Quản trị hệ thống server của công ty.</li><li>Lên kế hoạch giám sát, bảo trì, nâng cấp thiết bị phần cứng máy tính định kỳ.</li><li>Cài đặt phần mềm, phần cứng và hỗ trợ người dùng xử lý lỗi máy tính.</li><li>Lắp đặt, cấu hình camera và wifi theo yêu cầu.</li></ul>
+      </article>
+      <article class="tl">
+        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">Chuyên viên IT phần mềm</h3><span class="mono text-sm muted">06/2023 – 03/2024</span></div>
+        <p class="muted text-sm mb-2">Công ty giải pháp định cư ICAVIET</p>
+        <ul class="list-disc pl-5 space-y-1 muted"><li>Quản trị website, phối hợp marketing chỉnh sửa nội dung và phát triển website thương mại, website nội bộ.</li><li>Quản trị hosting, bảo mật website, ngăn chặn tấn công SQL Injection từ bên ngoài.</li><li>Kiểm soát thiết bị, lên kế hoạch bảo trì máy tính; giám sát mạng LAN, wifi, internet.</li></ul>
+      </article>
+      <article class="tl">
+        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">Technical Support (Junior)</h3><span class="mono text-sm muted">10/2022 – 01/2023</span></div>
+        <p class="muted text-sm mb-2">Công ty công nghệ FireGroup</p>
+        <ul class="list-disc pl-5 space-y-1 muted"><li>Hỗ trợ kỹ thuật cho cửa hàng khách hàng trên Shopify: tùy chỉnh giao diện, tăng tốc độ tải trang trên mobile.</li><li>Phối hợp bộ phận chăm sóc khách hàng và lập trình viên nâng cấp các ứng dụng Shopify app.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="pb-20">
+    <h2 class="title">Kỹ năng</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card p-6">
+        <h3 class="font-bold mb-4">Lập trình web</h3>
+        <div class="space-y-4" id="bars">
+          <div><div class="flex justify-between text-sm mb-1"><span>JavaScript</span><span class="mono muted">85%</span></div><div class="bar"><i data-w="85"></i></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>React.js</span><span class="mono muted">80%</span></div><div class="bar"><i data-w="80"></i></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>Shopify theme</span><span class="mono muted">80%</span></div><div class="bar"><i data-w="80"></i></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>WordPress</span><span class="mono muted">80%</span></div><div class="bar"><i data-w="80"></i></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>Node.js & Prisma</span><span class="mono muted">65%</span></div><div class="bar"><i data-w="65"></i></div></div>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-5"><span class="chip">Wix</span><span class="chip">Postman</span><span class="chip">Figma</span><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">SourceTree</span></div>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-bold mb-4">IT helpdesk & hạ tầng</h3>
+        <ul class="space-y-2 muted list-disc pl-5">
+          <li>Thiết kế sơ đồ mạng, chia VLAN, cấu hình camera.</li>
+          <li>Lắp đặt phòng máy, theo dõi bảo dưỡng định kỳ, kế hoạch thay thế thiết bị.</li>
+          <li>Cài đặt Windows, macOS; reset hệ điều hành iOS.</li>
+          <li>Bảo trì, thay mực máy in và máy photocopy; vệ sinh máy tính, MacBook.</li>
+          <li>Bảo mật website, ngăn chặn SQL Injection.</li>
+        </ul>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-bold mb-3">Quản lý con người</h3>
+        <p class="muted">Từng làm nhân viên điều phối, quản lý shipper giao hàng của Lazada khi đi học tại TP.HCM. Trực tiếp xử lý khách hàng khi đơn hàng có sự cố hoặc cần đổi trả.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-bold mb-3">Tự học và quản lý thời gian</h3>
+        <p class="muted">Thường xuyên cập nhật công nghệ mới và sẵn sàng học ngôn ngữ lập trình mới theo yêu cầu công việc. Vừa làm tại công ty vừa nhận dự án freelance, luôn sắp xếp công việc để đúng tiến độ.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="pb-20">
+    <h2 class="title">Dự án cá nhân</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://yex.vn" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">yex.vn</h3><p class="muted text-sm mt-1">Website WordPress tùy chỉnh theme và tính năng.</p></a>
+      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://icago.com" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">icago.com</h3><p class="muted text-sm mt-1">Website doanh nghiệp xây dựng trên WordPress.</p></a>
+      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://pickoinn.com.vn" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">pickoinn.com.vn</h3><p class="muted text-sm mt-1">Website WordPress cho khách hàng bên ngoài.</p></a>
+      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://tqg.com" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">tqg.com</h3><p class="muted text-sm mt-1">Website WordPress theo yêu cầu khách hàng.</p></a>
+      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://chan-chanform.vercel.app" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">React JS</div><h3 class="font-bold">chan-chanform</h3><p class="muted text-sm mt-1">Ứng dụng React triển khai trên Vercel.</p></a>
+      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://sayaka-manager.vercel.app" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">React JS</div><h3 class="font-bold">sayaka-manager</h3><p class="muted text-sm mt-1">Ứng dụng quản lý viết bằng React.</p></a>
+    </div>
+  </section>
+
+  <!-- EDU -->
+  <section id="edu" class="pb-20 grid md:grid-cols-2 gap-5">
+    <div>
+      <h2 class="title">Học vấn</h2>
+      <div class="card p-6"><h3 class="font-bold">Đại học Công nghệ TP.HCM</h3><p class="mono text-sm muted">2017 – 2023</p><p class="muted mt-2">Công nghệ thông tin – Công nghệ phần mềm (đã tốt nghiệp).</p></div>
+    </div>
+    <div>
+      <h2 class="title">Chứng chỉ</h2>
+      <div class="card p-6 space-y-3">
+        <div class="flex justify-between gap-3"><span>Bằng tốt nghiệp đại học</span><span class="mono muted">2023</span></div>
+        <div class="flex justify-between gap-3"><span>Tiếng Anh CEFR B1</span><span class="mono muted">2023</span></div>
+        <div class="flex justify-between gap-3"><span>Chứng chỉ nghiệp vụ sư phạm</span><span class="mono muted">2025</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="pb-24">
+    <div class="card p-8 md:p-12 text-center" style="box-shadow:0 20px 60px var(--glow)">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Cùng làm việc nhé</h2>
+      <p class="muted mt-3 max-w-lg mx-auto">Cần một website, cửa hàng Shopify hoặc người quản trị hệ thống IT? Gửi tin nhắn cho tôi.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-7">
+        <a class="btn btn-p" href="mailto:anhdev24h@gmail.com">anhdev24h@gmail.com</a>
+        <a class="btn" href="tel:0776980269">0776 980 269</a>
+      </div>
+      <p class="muted text-sm mt-6">Hòa Thành, Tây Ninh</p>
+    </div>
+  </section>
+</main>
+
+<footer class="text-center muted text-sm pb-10">© 2026 Huỳnh Anh</footer>
+
+<script>
+(function(){
+  // Theme
+  var root=document.documentElement;
+  try{root.setAttribute('data-theme',localStorage.getItem('theme')||'dark')}catch(e){root.setAttribute('data-theme','dark')}
+  document.getElementById('theme').onclick=function(){
+    var t=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',t);
+    try{localStorage.setItem('theme',t)}catch(e){}
+  };
+
+  // Typing role
+  var roles=['website với React','giao diện Shopify','website WordPress','hệ thống IT cho doanh nghiệp'];
+  var el=document.getElementById('role'),ri=0,ci=0,del=false;
+  (function tick(){
+    var w=roles[ri];
+    el.textContent=w.slice(0,ci);
+    if(!del&&ci===w.length){del=true;return setTimeout(tick,1600)}
+    if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+    ci+=del?-1:1;
+    setTimeout(tick,del?30:70);
+  })();
+
+  // Code panel
+  var code=[
+    ['const ','k'],['dev','v'],[' = {\n',''],
+    ['  name: ','' ],['"Huỳnh Anh"','s'],[',\n',''],
+    ['  role: ',''],['["Web Developer", "IT"]','s'],[',\n',''],
+    ['  stack: ',''],['["React", "Node", "Prisma"]','s'],[',\n',''],
+    ['  cms: ',''],['["Shopify", "WordPress", "Wix"]','s'],[',\n',''],
+    ['  location: ',''],['"Tây Ninh, VN"','s'],[',\n',''],
+    ['  openToWork: ',''],['true','k'],[',\n',''],
+    ['  learning: ',''],['"mọi công nghệ mới"','s'],['\n};\n\n',''],
+    ['dev.contact();','v']
+  ];
+  var cols={k:'#ff7ab2',v:'#7dd3fc',s:'#2ee37a','':'#c9f5da'};
+  var pre=document.getElementById('code');
+  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function render(n){
+    var out='',used=0;
+    for(var i=0;i<code.length;i++){
+      var t=code[i][0],c=cols[code[i][1]];
+      if(used+t.length<=n){out+='<span style="color:'+c+'">'+esc(t)+'</span>';used+=t.length}
+      else{out+='<span style="color:'+c+'">'+esc(t.slice(0,n-used))+'</span>';break}
+    }
+    pre.innerHTML=out+'<span class="cursor"></span>';
+  }
+  var total=code.reduce(function(a,b){return a+b[0].length},0),n=reduce?total:0;
+  (function type(){render(n);if(n<total){n+=2;setTimeout(type,28)}})();
+
+  // Counters + bars on view
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;
+    io.unobserve(e.target);
+    var t=e.target;
+    if(t.dataset.count){var to=+t.dataset.count,v=0;var s=setInterval(function(){v++;t.textContent=v+(to>=3&&t.dataset.count==='3'?'+':'');if(v>=to)clearInterval(s)},200)}
+    if(t.dataset.w){t.style.width=t.dataset.w+'%'}
+  })},{threshold:.4});
+  document.querySelectorAll('[data-count],[data-w]').forEach(function(x){io.observe(x)});
+
+  // Network background
+  var cv=document.getElementById('net'),cx=cv.getContext('2d'),P=[],W,H;
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];var n=Math.min(70,Math.floor(W*H/22000));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3})}
+  size();addEventListener('resize',size);
+  function draw(){
+    cx.clearRect(0,0,W,H);
+    var a=getComputedStyle(root).getPropertyValue('--accent').trim()||'#2ee37a';
+    cx.fillStyle=a;cx.strokeStyle=a;
+    for(var i=0;i<P.length;i++){
+      var p=P[i];
+      if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+      cx.globalAlpha=.35;cx.beginPath();cx.arc(p.x,p.y,1.6,0,6.3);cx.fill();
+      for(var j=i+1;j<P.length;j++){
+        var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+        if(d<130){cx.globalAlpha=.12*(1-d/130);cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}
+      }
+    }
+    if(!reduce)requestAnimationFrame(draw)
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
