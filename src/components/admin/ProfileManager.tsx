@@ -72,8 +72,36 @@ export function ProfileManager({ profile, onRefresh }: ProfileManagerProps) {
         <div className="p-5 sm:p-6 rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white dark:bg-[#1e1813] space-y-4">
           <h3 className="font-bold text-sm sm:text-base text-[#2a1f14] dark:text-[#f5ece4] flex items-center gap-2">
             <User className="w-4 h-4 text-[#a0620f] dark:text-[#f5b942]" />
-            <span>Thông tin vị trí & Công ty</span>
+            <span>Ảnh đại diện & Thông tin vị trí</span>
           </h3>
+
+          {/* Avatar Preview & URL */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 p-4 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-[#f8f3ec]/40 dark:bg-[#15110e]/40">
+            <div className="relative shrink-0">
+              <div className="w-20 h-20 rounded-2xl overflow-hidden ring-2 ring-[#a0620f]/40 dark:ring-[#f5b942]/50 shadow-md">
+                <img
+                  src={formData.avatarUrl || '/huynh-anh.jpg'}
+                  alt={formData.fullName}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+            <div className="flex-1 w-full space-y-1">
+              <label className="block text-xs font-semibold text-[#2a1f14] dark:text-[#f5ece4]">
+                Đường dẫn ảnh đại diện (Avatar URL)
+              </label>
+              <input
+                type="text"
+                value={formData.avatarUrl || ''}
+                onChange={(e) => setFormData({ ...formData, avatarUrl: e.target.value })}
+                placeholder="/huynh-anh.jpg"
+                className="w-full px-3 py-2 rounded-xl border border-[#e7dcce] dark:border-[#33281f] bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] text-xs font-mono focus:outline-none focus:ring-2 focus:ring-[#a0620f]/30 dark:focus:ring-[#f5b942]/30 focus:border-[#a0620f] dark:focus:border-[#f5b942]"
+              />
+              <p className="text-[11px] text-[#786352] dark:text-[#b5a393]">
+                Ảnh chân dung của bạn đang được lưu tại <code className="font-mono text-[#a0620f] dark:text-[#f5b942]">/huynh-anh.jpg</code> trong thư mục public.
+              </p>
+            </div>
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>

@@ -72,7 +72,12 @@ export async function getProfile(): Promise<ProfileData> {
       console.warn('Supabase fetch profile error, fallback to local:', err);
     }
   }
-  return getLocal<ProfileData>(STORAGE_KEYS.PROFILE, initialProfileData);
+  const local = getLocal<ProfileData>(STORAGE_KEYS.PROFILE, initialProfileData);
+  if (!local.avatarUrl || local.avatarUrl.includes('unsplash.com')) {
+    local.avatarUrl = '/huynh-anh.jpg';
+    setLocal(STORAGE_KEYS.PROFILE, local);
+  }
+  return local;
 }
 
 export async function updateProfile(updated: Partial<ProfileData>): Promise<ProfileData> {

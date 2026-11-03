@@ -48,17 +48,31 @@ export function About({ profile }: AboutProps) {
           <div className="lg:col-span-5 space-y-6">
             <div className="p-6 md:p-8 rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white/90 dark:bg-[#1e1813]/90 backdrop-blur-md shadow-sm">
               
-              <div className="flex items-center gap-3 pb-6 border-b border-[#e7dcce]/60 dark:border-[#33281f]">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#a0620f] to-[#f5b942] flex items-center justify-center text-white dark:text-[#15110e] text-xl font-bold font-mono shadow-md shadow-[#f5b942]/20">
-                  HA
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 pb-6 border-b border-[#e7dcce]/60 dark:border-[#33281f]">
+                <div className="relative shrink-0 group">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden ring-3 ring-[#a0620f]/40 dark:ring-[#f5b942]/50 shadow-lg shadow-[#f5b942]/15">
+                    <img
+                      src={profile.avatarUrl || '/huynh-anh.jpg'}
+                      alt={profile.fullName}
+                      className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <span
+                    className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white dark:border-[#1e1813]"
+                    title="Active"
+                  />
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg text-[#2a1f14] dark:text-[#f5ece4]">
+                <div className="text-center sm:text-left">
+                  <h3 className="font-bold text-lg sm:text-xl text-[#2a1f14] dark:text-[#f5ece4]">
                     {profile.fullName}
                   </h3>
-                  <div className="flex items-center gap-1.5 text-xs text-[#a0620f] dark:text-[#f5b942] font-semibold mt-0.5">
-                    <Building2 className="w-3.5 h-3.5" />
+                  <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs text-[#a0620f] dark:text-[#f5b942] font-semibold mt-1">
+                    <Building2 className="w-3.5 h-3.5 shrink-0" />
                     <span>Digital Creations • Frontend Developer</span>
+                  </div>
+                  <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>{profile.openToWork ? (lang === 'vi' ? 'Sẵn sàng nhận dự án' : 'Open to work') : (lang === 'vi' ? 'Đang bận' : 'Busy')}</span>
                   </div>
                 </div>
               </div>

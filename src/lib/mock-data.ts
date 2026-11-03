@@ -27,7 +27,7 @@ export const initialProfileData: ProfileData = {
   githubUrl: 'https://github.com/huynhanhdev',
   linkedinUrl: 'https://linkedin.com/in/huynhanh-dev',
   facebookUrl: 'https://facebook.com',
-  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+  avatarUrl: '/huynh-anh.jpg',
   resumeUrl: '#',
   openToWork: true,
   yearsOfExperience: 3,

@@ -82,14 +82,30 @@ export function Hero({ profile }: HeroProps) {
               <span>{lang === 'vi' ? 'Frontend Developer tại Digital Creations' : 'Frontend Developer at Digital Creations'}</span>
             </div>
 
-            {/* Main Greeting & Name */}
-            <div>
-              <p className="text-sm md:text-base font-mono font-medium text-[#a0620f] dark:text-[#f5b942] mb-1">
-                {t.hero.greeting}
-              </p>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#2a1f14] dark:text-[#f5ece4] leading-[1.08]">
-                {profile.fullName}
-              </h1>
+            {/* Main Greeting & Name with Avatar */}
+            <div className="flex items-center gap-4 sm:gap-5">
+              <div className="relative shrink-0 group">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-2xl overflow-hidden ring-3 ring-[#a0620f]/40 dark:ring-[#f5b942]/50 shadow-xl shadow-[#a0620f]/15 transition-transform duration-300 group-hover:scale-105">
+                  <img
+                    src={profile.avatarUrl || '/huynh-anh.jpg'}
+                    alt={profile.fullName}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <span
+                  className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-[#f8f3ec] dark:border-[#15110e] shadow-xs"
+                  title="Online • Open to Work"
+                />
+              </div>
+
+              <div>
+                <p className="text-sm md:text-base font-mono font-medium text-[#a0620f] dark:text-[#f5b942] mb-1">
+                  {t.hero.greeting}
+                </p>
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#2a1f14] dark:text-[#f5ece4] leading-[1.08]">
+                  {profile.fullName}
+                </h1>
+              </div>
             </div>
 
             {/* Dynamic Typing Role */}

@@ -41,11 +41,18 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="#top"
-          className="flex items-center gap-2 font-mono text-base md:text-lg font-bold tracking-tight text-[#2a1f14] dark:text-[#f5ece4] group"
+          className="flex items-center gap-2.5 font-mono text-base md:text-lg font-bold tracking-tight text-[#2a1f14] dark:text-[#f5ece4] group"
         >
-          <span className="text-[#a0620f] dark:text-[#f5b942] font-extrabold">&lt;</span>
-          <span className="group-hover:text-[#a0620f] dark:group-hover:text-[#f5b942] transition-colors">huynhanh</span>
-          <span className="text-[#a0620f] dark:text-[#f5b942] font-extrabold">/&gt;</span>
+          <img
+            src="/huynh-anh.jpg"
+            alt="Huỳnh Anh"
+            className="w-8 h-8 rounded-full object-cover ring-2 ring-[#a0620f]/40 dark:ring-[#f5b942]/50 shadow-xs"
+          />
+          <div className="flex items-center gap-0.5">
+            <span className="text-[#a0620f] dark:text-[#f5b942] font-extrabold">&lt;</span>
+            <span className="group-hover:text-[#a0620f] dark:group-hover:text-[#f5b942] transition-colors">huynhanh</span>
+            <span className="text-[#a0620f] dark:text-[#f5b942] font-extrabold">/&gt;</span>
+          </div>
           <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-sans font-medium px-2.5 py-0.5 rounded-full bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30">
             <Sparkles className="w-2.5 h-2.5" />
             Digital Creations

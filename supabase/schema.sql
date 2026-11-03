@@ -136,6 +136,7 @@ insert into public.profiles (
   location_vi,
   location_en,
   github_url,
+  avatar_url,
   open_to_work,
   years_of_experience
 ) values (
@@ -153,6 +154,7 @@ insert into public.profiles (
   'Hòa Thành, Tây Ninh, Việt Nam',
   'Hoa Thanh, Tay Ninh, Vietnam',
   'https://github.com/huynhanhdev',
+  '/huynh-anh.jpg',
   true,
   3
 ) on conflict do nothing;
