@@ -104,45 +104,63 @@ export function Projects({ projects }: ProjectsProps) {
               return (
                 <div
                   key={proj.id}
-                  className="group rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white/95 dark:bg-[#1e1813]/95 overflow-hidden hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                  className="group rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white/95 dark:bg-[#1e1813]/95 overflow-hidden hover:border-[#a0620f]/60 dark:hover:border-[#f5b942]/60 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#a0620f]/15 dark:hover:shadow-[#f5b942]/20 transition-all duration-300 flex flex-col justify-between"
                 >
-                  <div className="p-6">
-                    {/* Top Row: Category badge & Featured indicator */}
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${badge.color}`}>
-                        {badge.label}
-                      </span>
-                      {proj.featured && (
-                        <span className="flex items-center gap-1 text-[11px] font-semibold text-[#a0620f] dark:text-[#f5b942] bg-[#a0620f]/10 dark:bg-[#f5b942]/15 px-2 py-0.5 rounded-full border border-[#a0620f]/20 dark:border-[#f5b942]/30">
-                          <Sparkles className="w-2.5 h-2.5" />
-                          {t.projects.featuredBadge}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="font-bold text-lg text-[#2a1f14] dark:text-[#f5ece4] group-hover:text-[#a0620f] dark:group-hover:text-[#f5b942] transition-colors">
-                      {title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="mt-2 text-xs sm:text-sm text-[#786352] dark:text-[#b5a393] leading-relaxed line-clamp-3">
-                      {description}
-                    </p>
-
-                    {/* Tags */}
-                    {proj.tags && proj.tags.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-1.5">
-                        {proj.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="font-mono text-[10px] px-2 py-0.5 rounded-md bg-[#f8f3ec] dark:bg-[#272019] text-[#786352] dark:text-[#b5a393] border border-[#e7dcce] dark:border-[#33281f]"
-                          >
-                            {tag}
+                  <div>
+                    {proj.imageUrl && (
+                      <div className="relative w-full h-44 overflow-hidden bg-[#221a14] border-b border-[#e7dcce]/60 dark:border-[#33281f]">
+                        <img
+                          src={proj.imageUrl}
+                          alt={title}
+                          className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-108"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                          <span className="text-white text-xs font-semibold flex items-center gap-1.5">
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            {lang === 'vi' ? 'Khám phá dự án' : 'Explore Project'}
                           </span>
-                        ))}
+                        </div>
                       </div>
                     )}
+
+                    <div className="p-6">
+                      {/* Top Row: Category badge & Featured indicator */}
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${badge.color}`}>
+                          {badge.label}
+                        </span>
+                        {proj.featured && (
+                          <span className="flex items-center gap-1 text-[11px] font-semibold text-[#a0620f] dark:text-[#f5b942] bg-[#a0620f]/10 dark:bg-[#f5b942]/15 px-2 py-0.5 rounded-full border border-[#a0620f]/20 dark:border-[#f5b942]/30">
+                            <Sparkles className="w-2.5 h-2.5" />
+                            {t.projects.featuredBadge}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="font-bold text-lg text-[#2a1f14] dark:text-[#f5ece4] group-hover:text-[#a0620f] dark:group-hover:text-[#f5b942] transition-colors">
+                        {title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="mt-2 text-xs sm:text-sm text-[#786352] dark:text-[#b5a393] leading-relaxed line-clamp-3">
+                        {description}
+                      </p>
+
+                      {/* Tags */}
+                      {proj.tags && proj.tags.length > 0 && (
+                        <div className="mt-4 flex flex-wrap gap-1.5">
+                          {proj.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="font-mono text-[10px] px-2 py-0.5 rounded-md bg-[#f8f3ec] dark:bg-[#272019] text-[#786352] dark:text-[#b5a393] border border-[#e7dcce] dark:border-[#33281f] group-hover:border-[#a0620f]/30 dark:group-hover:border-[#f5b942]/30 transition-colors"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* Card Actions Footer */}

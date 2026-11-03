@@ -24,11 +24,25 @@ export function ParticleCanvas() {
     let animationFrameId: number;
     let particles: Particle[] = [];
     const isDark = resolvedTheme === 'dark';
+    const mouse = { x: -1000, y: -1000 };
+
+    const onMouseMove = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+
+    const onMouseLeave = () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseleave', onMouseLeave);
 
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      const count = Math.min(65, Math.floor((canvas.width * canvas.height) / 25000));
+      const count = Math.min(75, Math.floor((canvas.width * canvas.height) / 22000));
       particles = [];
       for (let i = 0; i < count; i++) {
         particles.push({
@@ -57,6 +71,23 @@ export function ParticleCanvas() {
         if (!prefersReducedMotion) {
           p.x += p.vx;
           p.y += p.vy;
+
+          // Mouse gentle repulsion
+          const dxMouse = p.x - mouse.x;
+          const dyMouse = p.y - mouse.y;
+          const distMouse = Math.hypot(dxMouse, dyMouse);
+          if (distMouse < 140) {
+            const force = (140 - distMouse) / 140;
+            p.x += (dxMouse / distMouse) * force * 1.5;
+            p.y += (dyMouse / distMouse) * force * 1.5;
+
+            // Connect line to mouse
+            ctx.globalAlpha = (1 - distMouse / 140) * (isDark ? 0.4 : 0.25);
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
 
           if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
           if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
@@ -89,6 +120,8 @@ export function ParticleCanvas() {
 
     return () => {
       window.removeEventListener('resize', resize);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseleave', onMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
   }, [resolvedTheme]);

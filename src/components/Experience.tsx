@@ -43,19 +43,23 @@ export function Experience({ experiences }: ExperienceProps) {
                 
                 {/* Timeline node icon */}
                 <div
-                  className={`absolute -left-[31px] md:-left-[47px] top-1.5 w-6 h-6 rounded-full border-4 transition-transform group-hover:scale-110 flex items-center justify-center ${
+                  className={`absolute -left-[31px] md:-left-[47px] top-1.5 w-6 h-6 rounded-full border-4 transition-transform group-hover:scale-125 flex items-center justify-center ${
                     exp.isCurrent
-                      ? 'bg-[#a0620f] dark:bg-[#f5b942] border-white dark:border-[#15110e] shadow-md shadow-[#f5b942]/40'
+                      ? 'bg-[#a0620f] dark:bg-[#f5b942] border-white dark:border-[#15110e] shadow-md shadow-[#f5b942]/40 ring-4 ring-[#a0620f]/20 dark:ring-[#f5b942]/30'
                       : 'bg-[#d8c9b9] dark:bg-[#33281f] border-white dark:border-[#15110e]'
                   }`}
-                />
+                >
+                  {exp.isCurrent && (
+                    <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-[#f5b942] opacity-75" />
+                  )}
+                </div>
 
                 {/* Card Container */}
                 <div
-                  className={`p-6 md:p-7 rounded-2xl border transition-all duration-200 ${
+                  className={`p-6 md:p-7 rounded-2xl border hover:-translate-y-1 hover:shadow-xl transition-all duration-300 ${
                     isDigitalCreations
-                      ? 'bg-[#a0620f]/5 dark:bg-[#f5b942]/10 border-[#a0620f]/30 dark:border-[#f5b942]/30 shadow-md shadow-[#f5b942]/5'
-                      : 'bg-white/90 dark:bg-[#1e1813]/90 border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40'
+                      ? 'bg-[#a0620f]/5 dark:bg-[#f5b942]/10 border-[#a0620f]/30 dark:border-[#f5b942]/30 shadow-md shadow-[#f5b942]/5 hover:border-[#a0620f]/60 dark:hover:border-[#f5b942]/60 hover:shadow-[#f5b942]/15'
+                      : 'bg-white/90 dark:bg-[#1e1813]/90 border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 hover:shadow-[#a0620f]/10 dark:hover:shadow-[#f5b942]/10'
                   }`}
                 >
                   

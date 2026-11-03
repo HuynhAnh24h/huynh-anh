@@ -104,3 +104,94 @@ body {
 .animate-cursor {
   animation: blink 1s step-end infinite;
 }
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Golden breathing glow */
+@keyframes earthPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px -2px rgba(160, 98, 15, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px 2px rgba(160, 98, 15, 0.4);
+  }
+}
+
+.dark .animate-earth-glow {
+  animation: darkEarthPulseGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes darkEarthPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px -2px rgba(245, 185, 66, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 45px 4px rgba(245, 185, 66, 0.5);
+  }
+}
+
+.animate-earth-glow {
+  animation: earthPulseGlow 3.5s ease-in-out infinite;
+}
+
+/* Shimmer beam effect */
+@keyframes shimmerBeam {
+  0% {
+    transform: translateX(-150%);
+  }
+  50%, 100% {
+    transform: translateX(200%);
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg) translateX(-150%);
+  animation: shimmerBeam 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* Scroll reveal utility */
+.reveal-base {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

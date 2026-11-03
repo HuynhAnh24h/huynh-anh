@@ -12,6 +12,7 @@ import { Projects } from '@/components/Projects';
 import { Education } from '@/components/Education';
 import { ContactForm } from '@/components/ContactForm';
 import { Footer } from '@/components/Footer';
+import { Reveal } from '@/components/Reveal';
 import { 
   getProfile, 
   getProjects, 
@@ -67,12 +68,24 @@ export default function HomePage() {
       <main className="relative z-10">
         <Hero profile={profile} />
         <Stats />
-        <About profile={profile} />
-        <Experience experiences={experiences} />
-        <Skills skills={skills} />
-        <Projects projects={projects} />
-        <Education />
-        <ContactForm profile={profile} />
+        <Reveal>
+          <About profile={profile} />
+        </Reveal>
+        <Reveal>
+          <Experience experiences={experiences} />
+        </Reveal>
+        <Reveal>
+          <Skills skills={skills} />
+        </Reveal>
+        <Reveal>
+          <Projects projects={projects} />
+        </Reveal>
+        <Reveal>
+          <Education />
+        </Reveal>
+        <Reveal>
+          <ContactForm profile={profile} />
+        </Reveal>
       </main>
 
       {/* Site Footer */}

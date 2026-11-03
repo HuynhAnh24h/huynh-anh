@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import { SkillItem } from '@/lib/types';
 import { 
@@ -33,6 +33,26 @@ interface SkillsProps {
 export function Skills({ skills }: SkillsProps) {
   const { lang, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const categories = [
     { id: 'all', label: t.skills.all, icon: Layers },
@@ -81,7 +101,7 @@ export function Skills({ skills }: SkillsProps) {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-28 relative">
+    <section ref={sectionRef} id="skills" className="py-20 md:py-28 relative">
       <div className="max-w-6xl mx-auto px-5">
         
         {/* Section Header */}
@@ -107,9 +127,9 @@ export function Skills({ skills }: SkillsProps) {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 border cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border cursor-pointer ${
                   isActive
-                    ? 'bg-[#a0620f] dark:bg-[#f5b942] text-white dark:text-[#15110e] border-transparent shadow-md shadow-[#f5b942]/20 font-bold'
+                    ? 'bg-[#a0620f] dark:bg-[#f5b942] text-white dark:text-[#15110e] border-transparent shadow-md shadow-[#f5b942]/20 font-bold scale-102'
                     : 'bg-white dark:bg-[#1e1813] border-[#e7dcce] dark:border-[#33281f] text-[#786352] dark:text-[#b5a393] hover:text-[#2a1f14] dark:hover:text-[#f5ece4] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40'
                 }`}
               >
@@ -122,16 +142,16 @@ export function Skills({ skills }: SkillsProps) {
 
         {/* Skills Cards Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-          {filteredSkills.map((skill) => (
+          {filteredSkills.map((skill, index) => (
             <div
               key={skill.id}
-              className="p-5 sm:p-6 rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white/90 dark:bg-[#1e1813]/90 hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:shadow-xl transition-all duration-200 flex flex-col justify-between group"
+              className="p-5 sm:p-6 rounded-2xl border border-[#e7dcce] dark:border-[#33281f] bg-white/90 dark:bg-[#1e1813]/90 hover:border-[#a0620f]/60 dark:hover:border-[#f5b942]/60 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#a0620f]/10 dark:hover:shadow-[#f5b942]/10 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Header: Logo + Title + Percent */}
                 <div className="flex items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-[#f8f3ec] dark:bg-[#272019] border border-[#e7dcce] dark:border-[#33281f] shadow-xs group-hover:scale-105 transition-transform">
+                    <div className="p-2.5 rounded-xl bg-[#f8f3ec] dark:bg-[#272019] border border-[#e7dcce] dark:border-[#33281f] shadow-xs group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                       {renderIcon(skill.iconName)}
                     </div>
                     <div>
@@ -141,7 +161,7 @@ export function Skills({ skills }: SkillsProps) {
                     </div>
                   </div>
 
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded-md bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded-md bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30 group-hover:scale-105 transition-transform">
                     {skill.proficiency}%
                   </span>
                 </div>
@@ -158,8 +178,11 @@ export function Skills({ skills }: SkillsProps) {
               <div className="w-full pt-1">
                 <div className="w-full h-2 rounded-full bg-[#f2eae0] dark:bg-[#272019] overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-[#a0620f] to-[#f5b942] transition-all duration-1000"
-                    style={{ width: `${skill.proficiency}%` }}
+                    className="h-full rounded-full bg-gradient-to-r from-[#a0620f] via-[#df9b20] to-[#f5b942] transition-all duration-1000 ease-out"
+                    style={{
+                      width: isInView ? `${skill.proficiency}%` : '0%',
+                      transitionDelay: `${index * 60}ms`,
+                    }}
                   />
                 </div>
               </div>

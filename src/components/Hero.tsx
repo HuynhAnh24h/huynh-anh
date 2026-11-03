@@ -85,7 +85,7 @@ export function Hero({ profile }: HeroProps) {
             {/* Main Greeting & Name with Avatar */}
             <div className="flex items-center gap-4 sm:gap-5">
               <div className="relative shrink-0 group">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-2xl overflow-hidden ring-3 ring-[#a0620f]/40 dark:ring-[#f5b942]/50 shadow-xl shadow-[#a0620f]/15 transition-transform duration-300 group-hover:scale-105">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-2xl overflow-hidden ring-3 ring-[#a0620f]/40 dark:ring-[#f5b942]/50 shadow-xl shadow-[#a0620f]/15 transition-transform duration-300 group-hover:scale-105 animate-float animate-earth-glow">
                   <img
                     src={profile.avatarUrl || '/huynh-anh.jpg'}
                     alt={profile.fullName}
@@ -124,15 +124,15 @@ export function Hero({ profile }: HeroProps) {
 
             {/* Capability highlights pills */}
             <div className="flex flex-wrap gap-2 text-xs font-medium">
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f]">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:-translate-y-0.5 transition-all">
                 <Smartphone className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
                 <span>{lang === 'vi' ? 'Ứng dụng Mobile & Website' : 'Mobile Apps & Websites'}</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f]">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:-translate-y-0.5 transition-all">
                 <Globe2 className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
                 <span>Theme WordPress & WooCommerce</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f]">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white dark:bg-[#1e1813] text-[#2a1f14] dark:text-[#f5ece4] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/50 dark:hover:border-[#f5b942]/50 hover:-translate-y-0.5 transition-all">
                 <Sparkles className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
                 <span>React, TypeScript & Node.js</span>
               </div>
@@ -142,14 +142,14 @@ export function Hero({ profile }: HeroProps) {
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#a0620f] hover:bg-[#854f0a] dark:bg-[#f5b942] dark:hover:bg-[#df9b20] active:scale-98 text-white dark:text-[#15110e] shadow-lg shadow-[#a0620f]/20 dark:shadow-[#f5b942]/25 transition-all duration-200"
+                className="btn-shimmer inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#a0620f] hover:bg-[#854f0a] dark:bg-[#f5b942] dark:hover:bg-[#df9b20] active:scale-98 text-white dark:text-[#15110e] shadow-lg shadow-[#a0620f]/20 dark:shadow-[#f5b942]/25 hover:shadow-xl hover:shadow-[#a0620f]/30 dark:hover:shadow-[#f5b942]/35 hover:-translate-y-0.5 transition-all duration-200 group"
               >
                 <span>{t.hero.contactBtn}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f] dark:hover:border-[#f5b942] text-[#2a1f14] dark:text-[#f5ece4] hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f] dark:hover:border-[#f5b942] text-[#2a1f14] dark:text-[#f5ece4] hover:text-[#a0620f] dark:hover:text-[#f5b942] hover:-translate-y-0.5 shadow-xs hover:shadow-md transition-all duration-200"
               >
                 <span>{t.hero.viewProjectsBtn}</span>
               </Link>
