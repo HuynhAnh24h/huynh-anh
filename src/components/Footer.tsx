@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { useLanguage } from './LanguageContext';
-import { ShieldCheck, Heart, ArrowUp } from 'lucide-react';
+import { Heart, ArrowUp } from 'lucide-react';
 
 export function Footer() {
   const { lang, t } = useLanguage();
@@ -34,19 +33,11 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick links & Back to top */}
+          {/* Back to top */}
           <div className="flex items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400">
-            <Link
-              href="/admin"
-              className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-              <span>{t.footer.adminPortal}</span>
-            </Link>
-
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:text-emerald-500 hover:border-emerald-500/40 transition-colors"
+              className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:text-emerald-500 hover:border-emerald-500/40 transition-colors"
               aria-label="Lên đầu trang / Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

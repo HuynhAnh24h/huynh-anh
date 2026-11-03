@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { useLanguage } from './LanguageContext';
 import { ProjectItem } from '@/lib/types';
 import { 
@@ -11,8 +10,7 @@ import {
   Layers, 
   Smartphone, 
   Globe2, 
-  ShoppingBag,
-  Settings2
+  ShoppingBag
 } from 'lucide-react';
 import { GithubIcon } from './icons';
 
@@ -179,21 +177,6 @@ export function Projects({ projects }: ProjectsProps) {
             })}
           </div>
         )}
-
-        {/* Quick Admin Edit Project hint */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/admin"
-            className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-emerald-500 transition-colors py-2 px-4 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 hover:border-emerald-500/50"
-          >
-            <Settings2 className="w-3.5 h-3.5" />
-            <span>
-              {lang === 'vi'
-                ? 'Bạn muốn thêm hoặc chỉnh sửa dự án? Vào Cổng Quản Trị Admin'
-                : 'Want to add or manage your projects? Open Admin Portal'}
-            </span>
-          </Link>
-        </div>
 
       </div>
     </section>

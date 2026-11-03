@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useLanguage } from './LanguageContext';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
-import { Menu, X, ShieldCheck, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 
 export function Navbar() {
   const { t } = useLanguage();
@@ -63,14 +63,6 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/admin"
-            className="flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 text-slate-500 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
-            title="Trang quản trị / Admin Dashboard"
-          >
-            <ShieldCheck className="w-3.5 h-3.5" />
-            Admin
-          </Link>
         </nav>
 
         {/* Action Controls */}
@@ -103,16 +95,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center">
-              <Link
-                href="/admin"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400"
-              >
-                <ShieldCheck className="w-4 h-4" />
-                {t.nav.admin}
-              </Link>
-            </div>
           </nav>
         </div>
       )}
