@@ -17,7 +17,7 @@ import { supabase, isSupabaseConfigured } from './supabase';
 const STORAGE_KEYS = {
   PROFILE: 'huynhanh_profile_data',
   PROJECTS: 'huynhanh_projects_data',
-  SKILLS: 'huynhanh_skills_data',
+  SKILLS: 'huynhanh_skills_v2',
   EXPERIENCES: 'huynhanh_experiences_data',
   MESSAGES: 'huynhanh_messages_data',
 };
@@ -226,6 +226,7 @@ export async function getSkills(): Promise<SkillItem[]> {
           category: s.category,
           proficiency: s.proficiency,
           iconName: s.icon_name,
+          subtitle: s.subtitle,
         }));
       }
     } catch (err) {

@@ -55,9 +55,10 @@ create table if not exists public.projects (
 create table if not exists public.skills (
   id text primary key,
   name text not null,
-  category text not null check (category in ('frontend', 'mobile', 'cms', 'backend_it')),
+  category text not null,
   proficiency integer default 80 check (proficiency >= 0 and proficiency <= 100),
   icon_name text,
+  subtitle text,
   display_order integer default 0
 );
 
@@ -167,4 +168,21 @@ values
   ('proj-6', 'icago.com', 'icago.com Corporate Website', 'Website doanh nghiệp giải pháp định cư quốc tế ICAVIET, bảo mật cao và chống tấn công SQLi.', 'Corporate international immigration solutions platform with security hardening.', 'wordpress', array['WordPress', 'PHP', 'Security'], 'https://icago.com', null, false, 6),
   ('proj-7', 'pickoinn.com.vn', 'pickoinn.com.vn Commercial Site', 'Website bán hàng và giới thiệu sản phẩm đối tác, tương thích 100% thiết bị di động.', 'Commercial brand catalog and product showcase portal, completely responsive.', 'wordpress', array['WordPress', 'CSS3', 'Mobile Responsive'], 'https://pickoinn.com.vn', null, false, 7),
   ('proj-8', 'tqg.com', 'tqg.com Enterprise Portal', 'Giải pháp website doanh nghiệp chuyên biệt thiết kế trên nền tảng Shopify.', 'Custom tailored enterprise website engineered on Shopify platform.', 'shopify', array['Shopify', 'Liquid', 'E-commerce'], 'https://tqg.com', null, false, 8)
+on conflict (id) do nothing;
+
+-- Seed Skills (Thế mạnh chuyên môn của Huỳnh Anh)
+insert into public.skills (id, name, category, proficiency, icon_name, subtitle, display_order)
+values
+  ('sk-wp-1', 'WordPress Custom Theme', 'wordpress', 95, 'wordpress', 'HTML, CSS, JS, PHP, Custom Post Types & Hooks', 1),
+  ('sk-wp-2', 'Custom WooCommerce', 'wordpress', 92, 'woocommerce', 'Tùy biến luồng thanh toán, trang sản phẩm & mini cart', 2),
+  ('sk-wp-3', 'Elementor Page Builder', 'wordpress', 92, 'elementor', 'Custom widget, dynamic tags, responsive layouts', 3),
+  ('sk-wp-4', 'Flatsome Theme', 'wordpress', 95, 'flatsome', 'UX Builder, tối ưu tốc độ load e-commerce chuẩn SEO', 4),
+  ('sk-wp-5', 'PHP Development', 'wordpress', 88, 'php', 'Functions.php, REST API WordPress, bảo mật an toàn', 5),
+  ('sk-react-1', 'React.js', 'react', 92, 'react', 'Hooks, Custom Hooks, Context, Component architecture', 6),
+  ('sk-react-2', 'TypeScript', 'react', 90, 'typescript', 'Type safety, Generic, Interface, Strict typing', 7),
+  ('sk-react-3', 'Redux Toolkit & Redux Thunk', 'react', 88, 'redux', 'createSlice, createAsyncThunk, global state', 8),
+  ('sk-web-1', 'HTML5 & Modern CSS3', 'frontend', 96, 'html5', 'Semantic HTML, Flexbox, CSS Grid, Responsive', 9),
+  ('sk-web-2', 'JavaScript (ES6+)', 'frontend', 92, 'javascript', 'Async/Await, Promises, Closures, DOM', 10),
+  ('sk-back-1', 'Node.js', 'backend', 85, 'node', 'Express.js, REST API, Server architecture', 11),
+  ('sk-back-2', 'MongoDB', 'backend', 82, 'mongo', 'Mongoose schemas, aggregation pipelines, NoSQL', 12)
 on conflict (id) do nothing;

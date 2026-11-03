@@ -153,20 +153,109 @@ export const initialProjects: ProjectItem[] = [
 ];
 
 export const initialSkills: SkillItem[] = [
-  { id: 'sk-1', name: 'React / Next.js', category: 'frontend', proficiency: 90 },
-  { id: 'sk-2', name: 'TypeScript / JavaScript', category: 'frontend', proficiency: 88 },
-  { id: 'sk-3', name: 'Tailwind CSS / UI UX', category: 'frontend', proficiency: 92 },
-  { id: 'sk-4', name: 'HTML5 & Modern CSS3', category: 'frontend', proficiency: 95 },
-  { id: 'sk-5', name: 'React Native & Mobile App', category: 'mobile', proficiency: 85 },
-  { id: 'sk-6', name: 'Responsive Mobile Design', category: 'mobile', proficiency: 95 },
-  { id: 'sk-7', name: 'Cross-platform Mobile UI', category: 'mobile', proficiency: 82 },
-  { id: 'sk-8', name: 'Shopify Theme & Liquid', category: 'cms', proficiency: 85 },
-  { id: 'sk-9', name: 'WordPress & WooCommerce', category: 'cms', proficiency: 85 },
-  { id: 'sk-10', name: 'Wix Platform', category: 'cms', proficiency: 75 },
-  { id: 'sk-11', name: 'Node.js & Prisma', category: 'backend_it', proficiency: 70 },
-  { id: 'sk-12', name: 'Supabase & REST APIs', category: 'backend_it', proficiency: 80 },
-  { id: 'sk-13', name: 'IT Infrastructure & VLAN', category: 'backend_it', proficiency: 88 },
-  { id: 'sk-14', name: 'System Security & Anti-SQLi', category: 'backend_it', proficiency: 82 },
+  // WordPress Theme Development
+  {
+    id: 'sk-wp-1',
+    name: 'WordPress Custom Theme',
+    category: 'wordpress',
+    proficiency: 95,
+    iconName: 'wordpress',
+    subtitle: 'HTML, CSS, JS, PHP, Custom Post Types & Hooks',
+  },
+  {
+    id: 'sk-wp-2',
+    name: 'Custom WooCommerce',
+    category: 'wordpress',
+    proficiency: 92,
+    iconName: 'woocommerce',
+    subtitle: 'Tùy biến luồng thanh toán, trang sản phẩm & mini cart',
+  },
+  {
+    id: 'sk-wp-3',
+    name: 'Elementor Page Builder',
+    category: 'wordpress',
+    proficiency: 92,
+    iconName: 'elementor',
+    subtitle: 'Custom widget, dynamic tags, responsive layouts',
+  },
+  {
+    id: 'sk-wp-4',
+    name: 'Flatsome Theme',
+    category: 'wordpress',
+    proficiency: 95,
+    iconName: 'flatsome',
+    subtitle: 'UX Builder, tối ưu tốc độ load e-commerce chuẩn SEO',
+  },
+  {
+    id: 'sk-wp-5',
+    name: 'PHP Development',
+    category: 'wordpress',
+    proficiency: 88,
+    iconName: 'php',
+    subtitle: 'Functions.php, REST API WordPress, bảo mật an toàn',
+  },
+
+  // React & Modern Frontend
+  {
+    id: 'sk-react-1',
+    name: 'React.js',
+    category: 'react',
+    proficiency: 92,
+    iconName: 'react',
+    subtitle: 'Hooks, Custom Hooks, Context, Component architecture',
+  },
+  {
+    id: 'sk-react-2',
+    name: 'TypeScript',
+    category: 'react',
+    proficiency: 90,
+    iconName: 'typescript',
+    subtitle: 'Type safety, Generic, Interface, Strict typing',
+  },
+  {
+    id: 'sk-react-3',
+    name: 'Redux Toolkit & Redux Thunk',
+    category: 'react',
+    proficiency: 88,
+    iconName: 'redux',
+    subtitle: 'createSlice, createAsyncThunk, global state management',
+  },
+
+  // Core Web
+  {
+    id: 'sk-web-1',
+    name: 'HTML5 & Modern CSS3',
+    category: 'frontend',
+    proficiency: 96,
+    iconName: 'html5',
+    subtitle: 'Semantic HTML, Flexbox, CSS Grid, Media queries, Keyframes',
+  },
+  {
+    id: 'sk-web-2',
+    name: 'JavaScript (ES6+)',
+    category: 'frontend',
+    proficiency: 92,
+    iconName: 'javascript',
+    subtitle: 'Async/Await, Promises, Closures, DOM manipulation',
+  },
+
+  // Backend & Database
+  {
+    id: 'sk-back-1',
+    name: 'Node.js',
+    category: 'backend',
+    proficiency: 85,
+    iconName: 'node',
+    subtitle: 'Express.js, REST API, Middleware, Server architecture',
+  },
+  {
+    id: 'sk-back-2',
+    name: 'MongoDB',
+    category: 'backend',
+    proficiency: 82,
+    iconName: 'mongo',
+    subtitle: 'Mongoose schemas, aggregation pipelines, NoSQL',
+  },
 ];
 
 export const initialExperiences: ExperienceItem[] = [

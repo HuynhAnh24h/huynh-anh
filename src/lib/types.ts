@@ -53,9 +53,10 @@ export interface ProjectItem {
 export interface SkillItem {
   id: string;
   name: string;
-  category: 'frontend' | 'mobile' | 'cms' | 'backend_it';
+  category: 'wordpress' | 'react' | 'backend' | 'frontend' | string;
   proficiency: number; // 0 - 100
   iconName?: string;
+  subtitle?: string;
 }
 
 export interface ExperienceItem {
