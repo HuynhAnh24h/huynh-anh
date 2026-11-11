@@ -40,7 +40,7 @@ export interface ProjectItem {
   titleEn?: string;
   description: string;
   descriptionEn?: string;
-  category: 'web' | 'mobile' | 'shopify' | 'wordpress';
+  category: 'web' | 'mobile' | 'shopify' | 'wordpress' | 'desktop' | 'fullstack';
   tags: string[];
   imageUrl?: string;
   liveUrl?: string;

@@ -3,276 +3,651 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Huỳnh Anh – Web Developer & IT</title>
+<title>Huỳnh Anh – Lead Software Engineer & Enterprise Systems Architect</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <style>
-:root{--bg:#f4f7f5;--surface:#fff;--line:#d5dfd9;--text:#0f1a14;--muted:#52615a;--accent:#0a9f4f;--accent-ink:#fff;--glow:rgba(10,159,79,.14);--code:#0e1713;--code-text:#c9f5da;
-color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1210;--surface:#111c18;--line:#1f3029;--text:#e8f3ed;--muted:#8fa89b;--accent:#2ee37a;--accent-ink:#04140b;--glow:rgba(46,227,122,.16);--code:#060d0a;--code-text:#c9f5da;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0a1210;--surface:#111c18;--line:#1f3029;--text:#e8f3ed;--muted:#8fa89b;--accent:#2ee37a;--accent-ink:#04140b;--glow:rgba(46,227,122,.16);--code:#060d0a;--code-text:#c9f5da;color-scheme:dark}
-html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+:root{
+  --bg:#f8faf9;
+  --surface:#ffffff;
+  --line:#e2e8e5;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#0284c7;
+  --accent-ink:#ffffff;
+  --glow:rgba(2,132,199,0.15);
+  --code:#0b1320;
+  --code-text:#e2e8f0;
+  color-scheme:light;
+  box-sizing:border-box;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#070d18;
+    --surface:#0e1726;
+    --line:#1e293b;
+    --text:#f1f5f9;
+    --muted:#94a3b8;
+    --accent:#38bdf8;
+    --accent-ink:#031326;
+    --glow:rgba(56,189,248,0.18);
+    --code:#030712;
+    --code-text:#e2e8f0;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#070d18;
+  --surface:#0e1726;
+  --line:#1e293b;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
+  --accent-ink:#031326;
+  --glow:rgba(56,189,248,0.18);
+  --code:#030712;
+  --code-text:#e2e8f0;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;margin:0;line-height:1.6}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
 .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
-.muted{color:var(--muted)}.acc{color:var(--accent)}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px}
-.chip{border:1px solid var(--line);border-radius:999px;padding:.2rem .75rem;font-size:.85rem;background:var(--surface)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.3rem;border-radius:10px;font-weight:600;border:1px solid var(--line);transition:transform .15s}
+.muted{color:var(--muted)}
+.acc{color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;transition:all .2s ease}
+.card:hover{border-color:var(--accent);box-shadow:0 12px 30px var(--glow)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:.25rem .85rem;font-size:.8rem;font-weight:600;background:var(--surface);display:inline-flex;align-items:center;gap:.35rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.4rem;border-radius:12px;font-weight:700;font-size:.875rem;border:1px solid var(--line);transition:transform .15s,box-shadow .15s}
 .btn:hover{transform:translateY(-2px)}
-.btn-p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn-p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);box-shadow:0 4px 15px var(--glow)}
 #net{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
-header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.title{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
+header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.title{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
 .title::after{content:"";height:3px;width:56px;background:var(--accent);border-radius:3px}
-.tl{border-left:2px solid var(--line);padding-left:1.5rem;position:relative}
+.tl{border-left:2px solid var(--line);padding-left:1.75rem;position:relative}
 .tl::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--glow)}
-.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:6px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
-.cursor{display:inline-block;width:8px;height:1em;background:var(--accent);vertical-align:-2px;animation:b 1s steps(1) infinite}
-@keyframes b{50%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.cursor{animation:none}.bar i{transition:none}html{scroll-behavior:auto}}
+.bar{height:7px;border-radius:7px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:7px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.cursor{display:inline-block;width:8px;height:1em;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+pre.code-block{background:var(--code);color:var(--code-text);border:1px solid var(--line);border-radius:14px;padding:1.25rem;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55}
 </style>
 </head>
 <body>
 <canvas id="net" aria-hidden="true"></canvas>
 
+<!-- NAVIGATION -->
 <header class="nav">
   <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-    <a href="#top" class="font-bold text-lg mono"><span class="acc">&lt;</span>huynhanh<span class="acc">/&gt;</span></a>
-    <nav class="hidden md:flex gap-6 text-sm muted">
-      <a href="#exp" class="hover:text-[var(--accent)]">Kinh nghiệm</a>
-      <a href="#skills" class="hover:text-[var(--accent)]">Kỹ năng</a>
-      <a href="#projects" class="hover:text-[var(--accent)]">Dự án</a>
-      <a href="#edu" class="hover:text-[var(--accent)]">Học vấn</a>
-      <a href="#contact" class="hover:text-[var(--accent)]">Liên hệ</a>
+    <a href="#top" class="font-bold text-lg mono flex items-center gap-2">
+      <span class="acc">&lt;</span><span>HuynhAnh</span><span class="acc">/&gt;</span>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-500 border border-sky-500/20 font-sans hidden sm:inline">Lead Software Engineer</span>
+    </a>
+    <nav class="hidden md:flex gap-7 text-sm font-semibold muted">
+      <a href="#flagship" class="hover:text-[var(--accent)] transition-colors">Dự án KTS</a>
+      <a href="#arch" class="hover:text-[var(--accent)] transition-colors">Kiến trúc & Flow</a>
+      <a href="#exp" class="hover:text-[var(--accent)] transition-colors">Kinh nghiệm</a>
+      <a href="#skills" class="hover:text-[var(--accent)] transition-colors">Kỹ năng</a>
+      <a href="#edu" class="hover:text-[var(--accent)] transition-colors">Học vấn</a>
+      <a href="#contact" class="hover:text-[var(--accent)] transition-colors">Liên hệ</a>
     </nav>
-    <button id="theme" class="chip" aria-label="Đổi giao diện sáng/tối">Sáng / Tối</button>
+    <div class="flex items-center gap-3">
+      <a href="tel:0776980269" class="hidden sm:inline-flex text-xs font-bold text-sky-600 bg-sky-500/10 px-3 py-1.5 rounded-lg border border-sky-500/20">
+        📞 0776.980.269
+      </a>
+      <button id="theme" class="chip cursor-pointer" aria-label="Đổi giao diện">Sáng / Tối</button>
+    </div>
   </div>
 </header>
 
 <main id="top" class="max-w-6xl mx-auto px-5">
-  <!-- HERO -->
-  <section class="grid lg:grid-cols-2 gap-10 items-center py-16 md:py-24">
-    <div>
-      <p class="muted mb-3">Xin chào, tôi là</p>
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]">Huỳnh Anh</h1>
-      <p class="mt-5 text-xl md:text-2xl">Tôi làm <span id="role" class="acc font-semibold"></span><span class="cursor"></span></p>
-      <p class="muted mt-4 max-w-md">Trở thành một lập trình viên và nhân viên IT chuyên nghiệp. Hơn 3 năm làm website, Shopify, WordPress, React và vận hành hệ thống IT cho doanh nghiệp.</p>
-      <div class="flex flex-wrap gap-3 mt-8">
-        <a href="#contact" class="btn btn-p">Liên hệ với tôi</a>
-        <a href="#projects" class="btn">Xem dự án</a>
+
+  <!-- HERO SECTION -->
+  <section class="grid lg:grid-cols-12 gap-10 items-center py-14 md:py-22">
+    <div class="lg:col-span-7">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Sẵn sàng tiếp nhận vị trí Senior / Lead Software Engineer</span>
       </div>
-      <div class="flex flex-wrap gap-2 mt-8">
-        <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Prisma</span><span class="chip">Shopify</span><span class="chip">WordPress</span>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
+        Huỳnh Anh
+      </h1>
+
+      <p class="mt-4 text-xl sm:text-2xl font-medium">
+        Kỹ Sư Phần Mềm &bull; <span id="role" class="acc font-bold"></span><span class="cursor"></span>
+      </p>
+
+      <p class="muted mt-4 text-base leading-relaxed max-w-xl">
+        Hơn <strong>3+ năm kinh nghiệm</strong> chuyên sâu kiến trúc ứng dụng <strong>Native Desktop</strong> (Python 3.14, FastAPI, Microsoft Edge WebView2, React 19), phát triển hệ sinh thái phần mềm chấm công sinh trắc học mạng LAN (ZKTeco, Ronald Jack, Gigata), và nền tảng <strong>Cloud MERN SaaS</strong> tự động hóa VietQR.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a href="#flagship" class="btn btn-p">
+          🚀 Xem Hệ Thống KTS TimeAttendance
+        </a>
+        <a href="https://zalo.me/0776980269" target="_blank" rel="noopener" class="btn">
+          💬 Kết Nối Zalo Ngay
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-7 text-xs font-mono">
+        <span class="chip">Python 3.14</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">React 19</span>
+        <span class="chip">Node.js Serverless</span>
+        <span class="chip">ZKTeco UDP 4370</span>
+        <span class="chip">MongoDB</span>
+        <span class="chip">VietQR</span>
       </div>
     </div>
-    <div class="rounded-2xl overflow-hidden border" style="background:var(--code);border-color:var(--line);box-shadow:0 20px 60px var(--glow)">
-      <div class="flex items-center gap-2 px-4 py-3 border-b" style="border-color:var(--line)">
-        <i class="w-3 h-3 rounded-full bg-red-400"></i><i class="w-3 h-3 rounded-full bg-yellow-400"></i><i class="w-3 h-3 rounded-full bg-green-400"></i>
-        <span class="mono text-xs ml-3" style="color:#8fa89b">profile.js</span>
-      </div>
-      <pre id="code" class="mono text-[13px] md:text-sm p-5 overflow-x-auto min-h-[300px]" style="color:var(--code-text)"></pre>
-    </div>
-  </section>
 
-  <!-- STATS -->
-  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 pb-16">
-    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="3">0</div><div class="muted text-sm">năm kinh nghiệm</div></div>
-    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="4">0</div><div class="muted text-sm">công ty đã làm việc</div></div>
-    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="4">0</div><div class="muted text-sm">website WordPress</div></div>
-    <div class="card p-5"><div class="text-4xl font-bold acc" data-count="2">0</div><div class="muted text-sm">ứng dụng React đã triển khai</div></div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="exp" class="pb-20">
-    <h2 class="title">Kinh nghiệm làm việc</h2>
-    <div class="space-y-8">
-      <article class="tl">
-        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">React Developer (Freelancer)</h3><span class="mono text-sm muted">06/2024 – hiện tại</span></div>
-        <p class="muted text-sm mb-2">Làm việc tự do</p>
-        <ul class="list-disc pl-5 space-y-1 muted"><li>Lập trình giao diện người dùng UX/UI theo thiết kế mẫu Figma.</li><li>Làm việc với API, phối hợp với BE để kiểm soát, gọi và test API bằng Postman.</li><li>Cân đối thời gian giữa công việc tại công ty và tiến độ dự án cho khách hàng bên ngoài.</li></ul>
-      </article>
-      <article class="tl">
-        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">Nhân viên IT</h3><span class="mono text-sm muted">04/2024 – hiện tại</span></div>
-        <p class="muted text-sm mb-2">Công ty TNHH Kornbest Việt Nam</p>
-        <ul class="list-disc pl-5 space-y-1 muted"><li>Quản trị hệ thống server của công ty.</li><li>Lên kế hoạch giám sát, bảo trì, nâng cấp thiết bị phần cứng máy tính định kỳ.</li><li>Cài đặt phần mềm, phần cứng và hỗ trợ người dùng xử lý lỗi máy tính.</li><li>Lắp đặt, cấu hình camera và wifi theo yêu cầu.</li></ul>
-      </article>
-      <article class="tl">
-        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">Chuyên viên IT phần mềm</h3><span class="mono text-sm muted">06/2023 – 03/2024</span></div>
-        <p class="muted text-sm mb-2">Công ty giải pháp định cư ICAVIET</p>
-        <ul class="list-disc pl-5 space-y-1 muted"><li>Quản trị website, phối hợp marketing chỉnh sửa nội dung và phát triển website thương mại, website nội bộ.</li><li>Quản trị hosting, bảo mật website, ngăn chặn tấn công SQL Injection từ bên ngoài.</li><li>Kiểm soát thiết bị, lên kế hoạch bảo trì máy tính; giám sát mạng LAN, wifi, internet.</li></ul>
-      </article>
-      <article class="tl">
-        <div class="flex flex-wrap justify-between gap-2"><h3 class="font-bold text-lg">Technical Support (Junior)</h3><span class="mono text-sm muted">10/2022 – 01/2023</span></div>
-        <p class="muted text-sm mb-2">Công ty công nghệ FireGroup</p>
-        <ul class="list-disc pl-5 space-y-1 muted"><li>Hỗ trợ kỹ thuật cho cửa hàng khách hàng trên Shopify: tùy chỉnh giao diện, tăng tốc độ tải trang trên mobile.</li><li>Phối hợp bộ phận chăm sóc khách hàng và lập trình viên nâng cấp các ứng dụng Shopify app.</li></ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="pb-20">
-    <h2 class="title">Kỹ năng</h2>
-    <div class="grid md:grid-cols-2 gap-5">
-      <div class="card p-6">
-        <h3 class="font-bold mb-4">Lập trình web</h3>
-        <div class="space-y-4" id="bars">
-          <div><div class="flex justify-between text-sm mb-1"><span>JavaScript</span><span class="mono muted">85%</span></div><div class="bar"><i data-w="85"></i></div></div>
-          <div><div class="flex justify-between text-sm mb-1"><span>React.js</span><span class="mono muted">80%</span></div><div class="bar"><i data-w="80"></i></div></div>
-          <div><div class="flex justify-between text-sm mb-1"><span>Shopify theme</span><span class="mono muted">80%</span></div><div class="bar"><i data-w="80"></i></div></div>
-          <div><div class="flex justify-between text-sm mb-1"><span>WordPress</span><span class="mono muted">80%</span></div><div class="bar"><i data-w="80"></i></div></div>
-          <div><div class="flex justify-between text-sm mb-1"><span>Node.js & Prisma</span><span class="mono muted">65%</span></div><div class="bar"><i data-w="65"></i></div></div>
+    <!-- TERMINAL PROFILE CODE -->
+    <div class="lg:col-span-5 rounded-2xl overflow-hidden border shadow-2xl" style="background:var(--code);border-color:var(--line)">
+      <div class="flex items-center justify-between px-4 py-3 border-b" style="border-color:var(--line);background:rgba(255,255,255,0.03)">
+        <div class="flex items-center gap-2">
+          <i class="w-3 h-3 rounded-full bg-rose-500"></i>
+          <i class="w-3 h-3 rounded-full bg-amber-500"></i>
+          <i class="w-3 h-3 rounded-full bg-emerald-500"></i>
+          <span class="mono text-xs ml-2 text-slate-400">system_architect.py</span>
         </div>
-        <div class="flex flex-wrap gap-2 mt-5"><span class="chip">Wix</span><span class="chip">Postman</span><span class="chip">Figma</span><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">SourceTree</span></div>
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">ACTIVE</span>
       </div>
-      <div class="card p-6">
-        <h3 class="font-bold mb-4">IT helpdesk & hạ tầng</h3>
-        <ul class="space-y-2 muted list-disc pl-5">
-          <li>Thiết kế sơ đồ mạng, chia VLAN, cấu hình camera.</li>
-          <li>Lắp đặt phòng máy, theo dõi bảo dưỡng định kỳ, kế hoạch thay thế thiết bị.</li>
-          <li>Cài đặt Windows, macOS; reset hệ điều hành iOS.</li>
-          <li>Bảo trì, thay mực máy in và máy photocopy; vệ sinh máy tính, MacBook.</li>
-          <li>Bảo mật website, ngăn chặn SQL Injection.</li>
+      <pre id="code" class="mono text-[12px] sm:text-[13px] p-5 overflow-x-auto min-h-[320px] text-slate-200 leading-relaxed"></pre>
+    </div>
+  </section>
+
+  <!-- KEY METRICS -->
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 pb-16">
+    <div class="card p-6 text-center">
+      <div class="text-3xl sm:text-4xl font-extrabold acc" data-count="1000">0</div>
+      <div class="muted text-xs sm:text-sm font-semibold mt-1">Nhân Sự Vận Hành Thực Tế</div>
+    </div>
+    <div class="card p-6 text-center">
+      <div class="text-3xl sm:text-4xl font-extrabold acc">0.7s</div>
+      <div class="muted text-xs sm:text-sm font-semibold mt-1">Tốc Độ Radar Quét LAN 254 IP</div>
+    </div>
+    <div class="card p-6 text-center">
+      <div class="text-3xl sm:text-4xl font-extrabold acc">100%</div>
+      <div class="muted text-xs sm:text-sm font-semibold mt-1">Tự Động Xuất Excel & VietQR</div>
+    </div>
+    <div class="card p-6 text-center">
+      <div class="text-3xl sm:text-4xl font-extrabold acc" data-count="3">0</div>
+      <div class="muted text-xs sm:text-sm font-semibold mt-1">Năm Kinh Nghiệm Chuyên Sâu</div>
+    </div>
+  </section>
+
+  <!-- FLAGSHIP PROJECT SECTION -->
+  <section id="flagship" class="pb-20">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Dự Án Trọng Điểm &bull; Flagship Product</span>
+        <h2 class="title mt-1">KTS TimeAttendance Enterprise Suite</h2>
+      </div>
+      <a href="https://kts-time-attendance-ladingpage.vercel.app" target="_blank" rel="noopener" class="hidden sm:inline-flex btn btn-p text-xs">
+        Xem Live Website ↗
+      </a>
+    </div>
+
+    <!-- Product Overview Card -->
+    <div class="card p-6 sm:p-8 mb-8 border-2 border-sky-500/30">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+        <div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
+            Hệ Thống Native Desktop + MERN SaaS Độc Quyền
+          </span>
+          <h3 class="text-2xl font-bold mt-2 text-slate-900 dark:text-white">
+            Giải Pháp Quản Lý Chấm Công & Bản Quyền Phần Cứng Toàn Diện
+          </h3>
+          <p class="muted text-sm mt-1">
+            Thiết kế & lập trình độc lập bởi <strong>Huỳnh Anh</strong> phục vụ nhà máy sản xuất, doanh nghiệp trên 1.000 công nhân.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="https://github.com/HuynhAnh24h/kts-cham-cong" target="_blank" rel="noopener" class="btn text-xs">
+            GitHub Desktop App
+          </a>
+          <a href="https://github.com/HuynhAnh24h/KTS_TimeAttendance_ladingpage" target="_blank" rel="noopener" class="btn text-xs">
+            GitHub Landing Portal
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 Core Pillars -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
+        <div class="p-4 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-bold text-sky-600 dark:text-sky-400">01. Hybrid Native App</p>
+          <p class="text-xs muted mt-1.5 leading-relaxed">
+            Kết hợp Python FastAPI + React 19 nhúng qua Microsoft Edge WebView2, đóng gói 1 App (.exe) duy nhất, mở 0.5s, không bật CMD.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400">02. Radar Quét LAN 0.7s</p>
+          <p class="text-xs muted mt-1.5 leading-relaxed">
+            Thuật toán đa luồng 64 workers rà quét 254 IP trong 0.7s, tự động nhận diện ZKTeco, Ronald Jack, Gigata T9 qua cổng 4370 UDP/TCP.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-bold text-indigo-600 dark:text-indigo-400">03. Thuật Toán Auto-Shift</p>
+          <p class="text-xs muted mt-1.5 leading-relaxed">
+            Tự nhận diện ca kíp 24/7, lọc quẹt thẻ trùng lặp (Anti-passback) và xuất báo cáo ma trận Excel 31 ngày chuẩn Luật Lao Động.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-bold text-rose-600 dark:text-rose-400">04. Bảo Mật & Xóa 30 Ngày</p>
+          <p class="text-xs muted mt-1.5 leading-relaxed">
+            Khóa theo Machine ID + Tên Công Ty (HMAC-SHA256). Hết hạn khóa toàn bộ tính năng, tự động xóa sạch dữ liệu nếu quá 30 ngày.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARCHITECTURE & SYSTEM FLOW -->
+    <div id="arch" class="grid lg:grid-cols-2 gap-8 mb-8">
+      
+      <!-- Box 1: Architecture -->
+      <div class="card p-6 sm:p-7">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg">🏗️</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Kiến Trúc Kỹ Thuật (System Architecture)</h3>
+        </div>
+        <p class="text-xs muted mb-4">
+          Mô hình kết hợp <strong>Desktop Client Cục Bộ (Offline-First)</strong> và <strong>Cloud SaaS Serverless</strong> đảm bảo an toàn tuyệt đối:
+        </p>
+
+        <pre class="code-block">
+┌────────────────────────────────────────────────────────┐
+│  CLIENT NATIVE DESKTOP APP (Windows 10/11 - Single Exe)│
+│  ├─ UI: React 19 + Tailwind CSS (Edge WebView2 60fps)  │
+│  ├─ Core: Python 3.14 + FastAPI Asynchronous Backend   │
+│  ├─ Database: SQLite / SQL Cục bộ (Offline 100%)       │
+│  ├─ LAN Radar: 64 Concurrent Workers (254 IP / 0.7s)   │
+│  ├─ Engine: Auto-Shift Matching & Excel Matrix 31 Ngày │
+│  └─ Security: Hardware Cryptography + 30-Day Purge     │
+└──────────────┬────────────────────────────┬────────────┘
+               │ UDP/TCP 4370               │ HTTPS REST
+               ▼                            ▼
+┌───────────────────────────┐  ┌─────────────────────────┐
+│ CÁC MÁY CHẤM CÔNG LAN     │  │ CLOUD SAAS PORTAL       │
+│ ├─ ZKTeco SpeedFace-V5L   │  │ (MERN Stack on Vercel)  │
+│ ├─ Ronald Jack Pro        │  │ ├─ React 19 + Router v7 │
+│ ├─ Gigata T8 / T9 / FA-113│  │ ├─ Serverless Node.js   │
+│ └─ Wise Eye Biometrics    │  │ ├─ MongoDB Atlas Cluster│
+└───────────────────────────┘  │ ├─ VietQR Auto-Billing  │
+                               │ └─ Auto-Update API      │
+                               └─────────────────────────┘
+        </pre>
+      </div>
+
+      <!-- Box 2: System Flow -->
+      <div class="card p-6 sm:p-7">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg">🔄</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Luồng Vận Hành Toàn Diện (System Flow)</h3>
+        </div>
+        
+        <div class="space-y-4 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+            <p class="font-bold text-slate-900 dark:text-slate-100">Luồng 1: Dò tìm & Đồng bộ Máy Chấm Công (LAN)</p>
+            <p class="muted mt-1">Bấm "Tự Động Nhận Diện Máy (LAN)" &rarr; 64 tiến trình quét đồng thời 254 IP qua cổng 4370 UDP &rarr; Trả kết quả model, serial, user count trong 0.7s &rarr; Tải toàn bộ nhân viên & vân tay 1-Click.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+            <p class="font-bold text-slate-900 dark:text-slate-100">Luồng 2: Thuật Toán Auto-Shift & Báo Cáo Excel 31 Ngày</p>
+            <p class="muted mt-1">Nhận log quẹt thẻ thô &rarr; Lọc debounce anti-passback 5 phút &rarr; Thuật toán đối chiếu khung giờ ca tự do/ca xoay &rarr; Phân loại công chuẩn, đi muộn, về sớm, OT 1.5x-3.0x &rarr; Xuất file Excel ma trận 31 ngày.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+            <p class="font-bold text-slate-900 dark:text-slate-100">Luồng 3: Đăng Ký Bản Quyền, VietQR & Cấp Key Doanh Nghiệp</p>
+            <p class="muted mt-1">Khách chọn gói trên Landing Page &rarr; Nhập Tên Công Ty & Machine ID &rarr; Hệ thống sinh mã VietQR động &rarr; Admin duyệt 1-click &rarr; Ký số HMAC-SHA256 cấp key riêng biệt cho Công Ty đó.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
+            <p class="font-bold text-slate-900 dark:text-slate-100">Luồng 4: Kiểm Soát Hết Hạn & Tự Động Xóa Sạch Dữ Liệu 30 Ngày</p>
+            <p class="muted mt-1">Key hết hạn &rarr; Backend Middleware chặn toàn bộ API, Frontend bật LockoutScreen &rarr; Đếm ngược 30 ngày ân hạn &rarr; Quá 30 ngày không gia hạn: Lệnh purge_database_if_overdue() tự động xóa vĩnh viễn CSDL.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section id="exp" class="pb-20">
+    <h2 class="title">Kinh Nghiệm Thực Chiến</h2>
+    <div class="space-y-8">
+      
+      <!-- Experience 1: KTS -->
+      <article class="tl">
+        <div class="flex flex-wrap justify-between items-baseline gap-2">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lead Software Engineer & Enterprise System Architect</h3>
+          <span class="mono text-xs font-bold px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400">2025 – HIỆN TẠI</span>
+        </div>
+        <p class="font-semibold text-sm text-sky-600 dark:text-sky-400 mb-2">KTS Software Enterprise Solutions</p>
+        <ul class="list-disc pl-5 space-y-2 muted text-sm leading-relaxed">
+          <li><strong>Kiến trúc hệ thống Native Desktop:</strong> Xây dựng trọn gói phần mềm chấm công doanh nghiệp độc quyền bằng Python 3.14 FastAPI backend kết hợp React 19 UI nhúng qua Microsoft Edge WebView2, đóng gói 1 App duy nhất (.exe) không hiện cửa sổ terminal CMD, khởi động cực nhanh 0.5s.</li>
+          <li><strong>Radar quét mạng LAN siêu tốc:</strong> Phát triển engine rà quét 254 IP mạng nội bộ qua cổng 4370 TCP/UDP bằng 64 workers trong kỷ lục 0.7 giây, tự động nhận diện thiết bị ZKTeco, Ronald Jack, Gigata T9 và đồng bộ vân tay 1-Click.</li>
+          <li><strong>Thuật toán Auto-Shift & Xuất Excel 31 ngày:</strong> Thiết kế thuật toán tự động nhận diện ca kíp, ca gãy, ca đêm 24/7, cơ chế debounce chống quẹt thẻ trùng lặp và xuất bảng công ma trận Excel 31 ngày chuẩn mực Bộ Luật Lao Động 2026.</li>
+          <li><strong>Bảo mật bản quyền phần cứng:</strong> Khóa bản quyền theo Machine ID (MachineGuid + MAC + CPU) và Tên Công Ty (mỗi key cho 1 công ty) bằng chữ ký HMAC-SHA256, tự động khóa toàn bộ tính năng khi hết hạn và cơ chế tự động xóa sạch dữ liệu sau 30 ngày ân hạn.</li>
+          <li><strong>Cloud MERN SaaS & VietQR:</strong> Phát triển Web Portal Serverless trên Vercel kết hợp MongoDB Atlas, tự động hóa thanh toán VietQR 24/7 và hệ thống cập nhật phần mềm tự động (/api/updates/check).</li>
         </ul>
+      </article>
+
+      <!-- Experience 2: Kornbest -->
+      <article class="tl">
+        <div class="flex flex-wrap justify-between items-baseline gap-2">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">Kỹ Sư IT Hệ Thống & Quản Trị Hạ Tầng Doanh Nghiệp</h3>
+          <span class="mono text-xs font-semibold muted">04/2024 – HIỆN TẠI</span>
+        </div>
+        <p class="font-semibold text-sm muted mb-2">Công ty TNHH Kornbest Việt Nam</p>
+        <ul class="list-disc pl-5 space-y-1.5 muted text-sm leading-relaxed">
+          <li>Quản trị toàn diện hệ thống máy chủ, hạ tầng mạng LAN nội bộ, Wi-Fi công suất cao và hơn 100+ máy trạm của nhà máy sản xuất.</li>
+          <li>Trực tiếp triển khai, cấu hình và vận hành hệ thống máy chấm công nhận diện khuôn mặt AI (ZKTeco SpeedFace-V5L) và vân tay Gigata T9.</li>
+          <li>Lập kế hoạch bảo trì dự phòng, sao lưu dữ liệu máy chủ định kỳ, đảm bảo thời gian hoạt động hệ thống (uptime) đạt 99.9%.</li>
+        </ul>
+      </article>
+
+      <!-- Experience 3: Digital Creations -->
+      <article class="tl">
+        <div class="flex flex-wrap justify-between items-baseline gap-2">
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">Frontend & Mobile App Developer</h3>
+          <span class="mono text-xs font-semibold muted">2024 – 2025</span>
+        </div>
+        <p class="font-semibold text-sm muted mb-2">Digital Creations</p>
+        <ul class="list-disc pl-5 space-y-1.5 muted text-sm leading-relaxed">
+          <li>Phát triển ứng dụng di động đa nền tảng React Native (iOS & Android) và cổng thông tin doanh nghiệp bằng Next.js App Router & Tailwind CSS.</li>
+          <li>Tối ưu hóa hiệu năng render giao diện, đạt điểm số 100/100 Google Lighthouse SEO và trải nghiệm người dùng mượt mà 60fps.</li>
+          <li>Tích hợp các luồng API RESTful, quản lý state và xử lý đồng bộ dữ liệu thời gian thực.</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS & PROFICIENCY -->
+  <section id="skills" class="pb-20">
+    <h2 class="title">Kỹ Năng Kỹ Thuật</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      
+      <!-- Column 1: Desktop & Systems -->
+      <div class="card p-6 sm:p-7">
+        <h3 class="font-bold text-base mb-5 flex items-center gap-2">
+          <span>💻</span> <span>Kiến Trúc Desktop & Giao Thức Mạng</span>
+        </h3>
+        <div class="space-y-4" id="bars">
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Python 3.14 & FastAPI Asynchronous Core</span>
+              <span class="mono acc">95%</span>
+            </div>
+            <div class="bar"><i data-w="95"></i></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Giao thức ZKTeco / UDP 4370 & Radar LAN</span>
+              <span class="mono acc">94%</span>
+            </div>
+            <div class="bar"><i data-w="94"></i></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Native Packaging (PyInstaller, Edge WebView2)</span>
+              <span class="mono acc">92%</span>
+            </div>
+            <div class="bar"><i data-w="92"></i></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Bảo mật Cryptography (MachineGuid, HMAC-SHA256)</span>
+              <span class="mono acc">95%</span>
+            </div>
+            <div class="bar"><i data-w="95"></i></div>
+          </div>
+        </div>
       </div>
-      <div class="card p-6">
-        <h3 class="font-bold mb-3">Quản lý con người</h3>
-        <p class="muted">Từng làm nhân viên điều phối, quản lý shipper giao hàng của Lazada khi đi học tại TP.HCM. Trực tiếp xử lý khách hàng khi đơn hàng có sự cố hoặc cần đổi trả.</p>
+
+      <!-- Column 2: Web & Cloud -->
+      <div class="card p-6 sm:p-7">
+        <h3 class="font-bold text-base mb-5 flex items-center gap-2">
+          <span>🌐</span> <span>Cloud SaaS & Full-Stack MERN</span>
+        </h3>
+        <div class="space-y-4">
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>React 19, Next.js App Router & Tailwind CSS</span>
+              <span class="mono acc">96%</span>
+            </div>
+            <div class="bar"><i data-w="96"></i></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Node.js, Express.js Serverless on Vercel</span>
+              <span class="mono acc">90%</span>
+            </div>
+            <div class="bar"><i data-w="90"></i></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>MongoDB Atlas & SQLite Caching</span>
+              <span class="mono acc">88%</span>
+            </div>
+            <div class="bar"><i data-w="88"></i></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Cổng thanh toán VietQR & CI/CD GitHub Actions</span>
+              <span class="mono acc">92%</span>
+            </div>
+            <div class="bar"><i data-w="92"></i></div>
+          </div>
+        </div>
       </div>
-      <div class="card p-6">
-        <h3 class="font-bold mb-3">Tự học và quản lý thời gian</h3>
-        <p class="muted">Thường xuyên cập nhật công nghệ mới và sẵn sàng học ngôn ngữ lập trình mới theo yêu cầu công việc. Vừa làm tại công ty vừa nhận dự án freelance, luôn sắp xếp công việc để đúng tiến độ.</p>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section id="edu" class="pb-20 grid md:grid-cols-2 gap-6">
+    <div class="card p-6 sm:p-7">
+      <h2 class="text-base font-bold mb-4 flex items-center gap-2">
+        <span>🎓</span> <span>Học Vấn Chính Quy</span>
+      </h2>
+      <h3 class="font-bold text-lg text-slate-900 dark:text-white">Đại học Công nghệ TP.HCM (HUTECH)</h3>
+      <p class="mono text-xs font-semibold text-sky-600 dark:text-sky-400 mt-1">2017 – 2023</p>
+      <p class="muted text-xs mt-3 leading-relaxed">
+        <strong>Cử nhân Công nghệ Thông tin – Chuyên ngành Kỹ thuật Phần mềm (Software Engineering).</strong><br>
+        Tốt nghiệp hệ chính quy, trang bị nền tảng chuyên sâu về thuật toán, kiến trúc hệ thống, phát triển ứng dụng đa nền tảng và quản trị mạng máy tính.
+      </p>
+    </div>
+
+    <div class="card p-6 sm:p-7">
+      <h2 class="text-base font-bold mb-4 flex items-center gap-2">
+        <span>📜</span> <span>Chứng Chỉ Chuyên Môn</span>
+      </h2>
+      <div class="space-y-3.5 text-xs">
+        <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-500/5">
+          <span class="font-semibold">Bằng Cử Nhân Kỹ Thuật Phần Mềm</span>
+          <span class="mono font-bold acc">HUTECH &bull; 2023</span>
+        </div>
+        <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-500/5">
+          <span class="font-semibold">Chứng chỉ Tiếng Anh CEFR B1</span>
+          <span class="mono font-bold acc">Assessment &bull; 2023</span>
+        </div>
+        <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-500/5">
+          <span class="font-semibold">Chứng chỉ Nghiệp Vụ Sư Phạm Giảng Dạy</span>
+          <span class="mono font-bold acc">BGD&ĐT &bull; 2025</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="pb-20">
-    <h2 class="title">Dự án cá nhân</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://yex.vn" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">yex.vn</h3><p class="muted text-sm mt-1">Website WordPress tùy chỉnh theme và tính năng.</p></a>
-      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://icago.com" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">icago.com</h3><p class="muted text-sm mt-1">Website doanh nghiệp xây dựng trên WordPress.</p></a>
-      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://pickoinn.com.vn" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">pickoinn.com.vn</h3><p class="muted text-sm mt-1">Website WordPress cho khách hàng bên ngoài.</p></a>
-      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://tqg.com" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">WordPress</div><h3 class="font-bold">tqg.com</h3><p class="muted text-sm mt-1">Website WordPress theo yêu cầu khách hàng.</p></a>
-      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://chan-chanform.vercel.app" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">React JS</div><h3 class="font-bold">chan-chanform</h3><p class="muted text-sm mt-1">Ứng dụng React triển khai trên Vercel.</p></a>
-      <a class="card p-5 block hover:border-[var(--accent)] transition-colors" href="https://sayaka-manager.vercel.app" target="_blank" rel="noopener"><div class="mono text-xs acc mb-2">React JS</div><h3 class="font-bold">sayaka-manager</h3><p class="muted text-sm mt-1">Ứng dụng quản lý viết bằng React.</p></a>
-    </div>
-  </section>
+  <!-- CONTACT & FOOTER -->
+  <section id="contact" class="pb-20">
+    <div class="card p-8 text-center max-w-3xl mx-auto border-2 border-sky-500/30">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+        Sẵn Sàng Hợp Tác & Nhận Dự Án Mới
+      </h2>
+      <p class="muted text-sm mt-2 max-w-lg mx-auto">
+        Quý công ty, đối tác hoặc doanh nghiệp có nhu cầu tư vấn kiến trúc phần mềm, phát triển hệ thống chấm công hoặc tuyển dụng kỹ sư phần mềm cao cấp, vui lòng liên hệ:
+      </p>
 
-  <!-- EDU -->
-  <section id="edu" class="pb-20 grid md:grid-cols-2 gap-5">
-    <div>
-      <h2 class="title">Học vấn</h2>
-      <div class="card p-6"><h3 class="font-bold">Đại học Công nghệ TP.HCM</h3><p class="mono text-sm muted">2017 – 2023</p><p class="muted mt-2">Công nghệ thông tin – Công nghệ phần mềm (đã tốt nghiệp).</p></div>
-    </div>
-    <div>
-      <h2 class="title">Chứng chỉ</h2>
-      <div class="card p-6 space-y-3">
-        <div class="flex justify-between gap-3"><span>Bằng tốt nghiệp đại học</span><span class="mono muted">2023</span></div>
-        <div class="flex justify-between gap-3"><span>Tiếng Anh CEFR B1</span><span class="mono muted">2023</span></div>
-        <div class="flex justify-between gap-3"><span>Chứng chỉ nghiệp vụ sư phạm</span><span class="mono muted">2025</span></div>
+      <div class="flex flex-wrap justify-center gap-4 mt-6">
+        <a href="tel:0776980269" class="btn btn-p">
+          📞 Hotline: 0776.980.269
+        </a>
+        <a href="https://zalo.me/0776980269" target="_blank" rel="noopener" class="btn">
+          💬 Nhắn Tin Zalo Trực Tiếp
+        </a>
+        <a href="mailto:anhdev24h@gmail.com" class="btn">
+          ✉️ anhdev24h@gmail.com
+        </a>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 text-xs muted flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© 2026 Huỳnh Anh. All rights reserved.</span>
+        <span>Lead Software Engineer &bull; Enterprise Biometrics & SaaS</span>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="pb-24">
-    <div class="card p-8 md:p-12 text-center" style="box-shadow:0 20px 60px var(--glow)">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Cùng làm việc nhé</h2>
-      <p class="muted mt-3 max-w-lg mx-auto">Cần một website, cửa hàng Shopify hoặc người quản trị hệ thống IT? Gửi tin nhắn cho tôi.</p>
-      <div class="flex flex-wrap justify-center gap-3 mt-7">
-        <a class="btn btn-p" href="mailto:anhdev24h@gmail.com">anhdev24h@gmail.com</a>
-        <a class="btn" href="tel:0776980269">0776 980 269</a>
-      </div>
-      <p class="muted text-sm mt-6">Hòa Thành, Tây Ninh</p>
-    </div>
-  </section>
 </main>
-
-<footer class="text-center muted text-sm pb-10">© 2026 Huỳnh Anh</footer>
 
 <script>
 (function(){
-  // Theme
-  var root=document.documentElement;
-  try{root.setAttribute('data-theme',localStorage.getItem('theme')||'dark')}catch(e){root.setAttribute('data-theme','dark')}
-  document.getElementById('theme').onclick=function(){
-    var t=root.getAttribute('data-theme')==='dark'?'light':'dark';
-    root.setAttribute('data-theme',t);
-    try{localStorage.setItem('theme',t)}catch(e){}
+  var root = document.documentElement;
+  try {
+    root.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+  } catch(e) {
+    root.setAttribute('data-theme', 'dark');
+  }
+
+  document.getElementById('theme').onclick = function(){
+    var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', t);
+    try { localStorage.setItem('theme', t); } catch(e){}
   };
 
   // Typing role
-  var roles=['website với React','giao diện Shopify','website WordPress','hệ thống IT cho doanh nghiệp'];
-  var el=document.getElementById('role'),ri=0,ci=0,del=false;
+  var roles = [
+    'Hệ thống Chấm công Sinh trắc học',
+    'Ứng dụng Native Desktop (Python & React 19)',
+    'Nền tảng MERN Stack & VietQR SaaS',
+    'Kiến trúc Hạ tầng Mạng LAN Doanh nghiệp'
+  ];
+  var el = document.getElementById('role'), ri = 0, ci = 0, del = false;
   (function tick(){
-    var w=roles[ri];
-    el.textContent=w.slice(0,ci);
-    if(!del&&ci===w.length){del=true;return setTimeout(tick,1600)}
-    if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
-    ci+=del?-1:1;
-    setTimeout(tick,del?30:70);
+    var w = roles[ri];
+    el.textContent = w.slice(0, ci);
+    if (!del && ci === w.length) { del = true; return setTimeout(tick, 1800); }
+    if (del && ci === 0) { del = false; ri = (ri + 1) % roles.length; }
+    ci += del ? -1 : 1;
+    setTimeout(tick, del ? 25 : 60);
   })();
 
-  // Code panel
-  var code=[
-    ['const ','k'],['dev','v'],[' = {\n',''],
-    ['  name: ','' ],['"Huỳnh Anh"','s'],[',\n',''],
-    ['  role: ',''],['["Web Developer", "IT"]','s'],[',\n',''],
-    ['  stack: ',''],['["React", "Node", "Prisma"]','s'],[',\n',''],
-    ['  cms: ',''],['["Shopify", "WordPress", "Wix"]','s'],[',\n',''],
-    ['  location: ',''],['"Tây Ninh, VN"','s'],[',\n',''],
-    ['  openToWork: ',''],['true','k'],[',\n',''],
-    ['  learning: ',''],['"mọi công nghệ mới"','s'],['\n};\n\n',''],
-    ['dev.contact();','v']
+  // Terminal code simulation
+  var code = [
+    ['# Huynh Anh - Lead Software Engineer Profile\n', 'c'],
+    ['class ', 'k'], ['Engineer', 'v'], [':\n', ''],
+    ['    name = ', ''], ['"Huỳnh Anh"', 's'], ['\n', ''],
+    ['    role = ', ''], ['"Senior Full-Stack & Desktop Architect"', 's'], ['\n', ''],
+    ['    flagship_system = ', ''], ['"KTS TimeAttendance Suite v2.0"', 's'], ['\n', ''],
+    ['    stack = [\n', ''],
+    ['        ', ''], ['"Python 3.14 (FastAPI + Async)"', 's'], [',\n', ''],
+    ['        ', ''], ['"React 19 + Microsoft Edge WebView2"', 's'], [',\n', ''],
+    ['        ', ''], ['"ZKTeco UDP/TCP Protocol 4370"', 's'], [',\n', ''],
+    ['        ', ''], ['"MERN Stack (Vercel Serverless + Mongo)"', 's'], [',\n', ''],
+    ['        ', ''], ['"VietQR Automated Banking API"', 's'], ['\n', ''],
+    ['    ]\n', ''],
+    ['    lan_radar_speed = ', ''], ['"0.7 seconds (254 IPs)"', 's'], ['\n', ''],
+    ['    status = ', ''], ['"Ready for Senior / Lead Roles"', 's'], ['\n\n', ''],
+    ['engineer = Engineer()\n', ''],
+    ['print(f"Loaded: {engineer.flagship_system}")', 'v']
   ];
-  var cols={k:'#ff7ab2',v:'#7dd3fc',s:'#2ee37a','':'#c9f5da'};
-  var pre=document.getElementById('code');
-  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
-  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var cols = { k: '#38bdf8', v: '#34d399', s: '#f59e0b', c: '#64748b', '': '#e2e8f0' };
+  var pre = document.getElementById('code');
+  function esc(t){ return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
   function render(n){
-    var out='',used=0;
-    for(var i=0;i<code.length;i++){
-      var t=code[i][0],c=cols[code[i][1]];
-      if(used+t.length<=n){out+='<span style="color:'+c+'">'+esc(t)+'</span>';used+=t.length}
-      else{out+='<span style="color:'+c+'">'+esc(t.slice(0,n-used))+'</span>';break}
-    }
-    pre.innerHTML=out+'<span class="cursor"></span>';
-  }
-  var total=code.reduce(function(a,b){return a+b[0].length},0),n=reduce?total:0;
-  (function type(){render(n);if(n<total){n+=2;setTimeout(type,28)}})();
-
-  // Counters + bars on view
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(!e.isIntersecting)return;
-    io.unobserve(e.target);
-    var t=e.target;
-    if(t.dataset.count){var to=+t.dataset.count,v=0;var s=setInterval(function(){v++;t.textContent=v+(to>=3&&t.dataset.count==='3'?'+':'');if(v>=to)clearInterval(s)},200)}
-    if(t.dataset.w){t.style.width=t.dataset.w+'%'}
-  })},{threshold:.4});
-  document.querySelectorAll('[data-count],[data-w]').forEach(function(x){io.observe(x)});
-
-  // Network background
-  var cv=document.getElementById('net'),cx=cv.getContext('2d'),P=[],W,H;
-  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];var n=Math.min(70,Math.floor(W*H/22000));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3})}
-  size();addEventListener('resize',size);
-  function draw(){
-    cx.clearRect(0,0,W,H);
-    var a=getComputedStyle(root).getPropertyValue('--accent').trim()||'#2ee37a';
-    cx.fillStyle=a;cx.strokeStyle=a;
-    for(var i=0;i<P.length;i++){
-      var p=P[i];
-      if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
-      cx.globalAlpha=.35;cx.beginPath();cx.arc(p.x,p.y,1.6,0,6.3);cx.fill();
-      for(var j=i+1;j<P.length;j++){
-        var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);
-        if(d<130){cx.globalAlpha=.12*(1-d/130);cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}
+    var out = '', used = 0;
+    for (var i = 0; i < code.length; i++){
+      var t = code[i][0], c = cols[code[i][1]];
+      if (used + t.length <= n) {
+        out += '<span style="color:' + c + '">' + esc(t) + '</span>';
+        used += t.length;
+      } else {
+        out += '<span style="color:' + c + '">' + esc(t.slice(0, n - used)) + '</span>';
+        break;
       }
     }
-    if(!reduce)requestAnimationFrame(draw)
+    pre.innerHTML = out + '<span class="cursor"></span>';
+  }
+  var total = code.reduce(function(a, b){ return a + b[0].length; }, 0), n = reduce ? total : 0;
+  (function type(){ render(n); if (n < total) { n += 2; setTimeout(type, 24); } })();
+
+  // Counters & Progress bars
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var t = e.target;
+      if (t.dataset.count) {
+        var to = +t.dataset.count, v = 0;
+        var step = Math.max(1, Math.floor(to / 40));
+        var s = setInterval(function(){
+          v += step;
+          if (v >= to) {
+            v = to;
+            clearInterval(s);
+          }
+          t.textContent = v + (to >= 1000 ? '+' : (to >= 3 ? '+' : ''));
+        }, 30);
+      }
+      if (t.dataset.w) { t.style.width = t.dataset.w + '%'; }
+    });
+  }, { threshold: .3 });
+  document.querySelectorAll('[data-count],[data-w]').forEach(function(x){ io.observe(x); });
+
+  // Network particle background
+  var cv = document.getElementById('net'), cx = cv.getContext('2d'), P = [], W, H;
+  function size(){
+    W = cv.width = innerWidth;
+    H = cv.height = innerHeight;
+    P = [];
+    var n = Math.min(65, Math.floor(W * H / 24000));
+    for (var i = 0; i < n; i++) {
+      P.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 });
+    }
+  }
+  size();
+  addEventListener('resize', size);
+  function draw(){
+    cx.clearRect(0, 0, W, H);
+    var a = getComputedStyle(root).getPropertyValue('--accent').trim() || '#38bdf8';
+    cx.fillStyle = a;
+    cx.strokeStyle = a;
+    for (var i = 0; i < P.length; i++){
+      var p = P[i];
+      if (!reduce) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+      }
+      cx.globalAlpha = .3;
+      cx.beginPath();
+      cx.arc(p.x, p.y, 1.6, 0, 6.3);
+      cx.fill();
+      for (var j = i + 1; j < P.length; j++){
+        var q = P[j], d = Math.hypot(p.x - q.x, p.y - q.y);
+        if (d < 125) {
+          cx.globalAlpha = .12 * (1 - d / 125);
+          cx.beginPath();
+          cx.moveTo(p.x, p.y);
+          cx.lineTo(q.x, q.y);
+          cx.stroke();
+        }
+      }
+    }
+    if (!reduce) requestAnimationFrame(draw);
   }
   draw();
 })();

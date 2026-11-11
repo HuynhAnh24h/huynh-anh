@@ -12,20 +12,20 @@ export const translations = {
     },
     hero: {
       greeting: 'Xin chào, tôi là',
-      roleBadge: 'Frontend Developer @ Digital Creations | Mobile & Web',
-      roleIntro: 'Tôi làm',
+      roleBadge: 'Lead Software Engineer & Enterprise Systems Architect',
+      roleIntro: 'Tôi kiến tạo',
       roles: [
-        'Frontend Developer tại Digital Creations',
-        'Ứng dụng Mobile với React Native',
-        'Website hiện đại với Next.js & React',
-        'Giao diện Shopify & WordPress',
-        'Quản trị & Bảo mật hệ thống IT'
+        'Hệ thống Chấm công Doanh nghiệp (KTS TimeAttendance)',
+        'Ứng dụng Native Desktop (Python 3.14 + React 19)',
+        'Radar quét mạng LAN tự động 0.7s (ZKTeco, Gigata)',
+        'Nền tảng Cloud MERN Stack & VietQR SaaS',
+        'Kiến trúc Bản quyền Khóa Phần Cứng (Hardware-Locked)'
       ],
-      desc: 'Hiện đang là Frontend Developer tại Digital Creations. Đam mê xây dựng ứng dụng di động (Mobile Apps) và nền tảng website mượt mà, tối ưu hiệu năng và trải nghiệm người dùng cao cấp.',
+      desc: 'Kỹ sư phần mềm chuyên sâu phát triển ứng dụng Native Desktop hiệu năng cao, hệ thống đồng bộ thiết bị sinh trắc học qua mạng LAN, cùng nền tảng Web Portal & SaaS quản trị bản quyền tự động hóa VietQR.',
       contactBtn: 'Liên hệ hợp tác',
       viewProjectsBtn: 'Khám phá dự án',
-      statusAvailable: 'Sẵn sàng nhận dự án mới',
-      terminalFile: 'developer.ts',
+      statusAvailable: 'Sẵn sàng nhận dự án & vị trí Lead',
+      terminalFile: 'system_architect.ts',
     },
     stats: {
       experienceYears: 'Năm kinh nghiệm',
@@ -159,20 +159,20 @@ export const translations = {
     },
     hero: {
       greeting: "Hello, I'm",
-      roleBadge: 'Frontend Developer @ Digital Creations | Mobile & Web',
-      roleIntro: 'I develop',
+      roleBadge: 'Lead Software Engineer & Enterprise Systems Architect',
+      roleIntro: 'I architect',
       roles: [
-        'Frontend Developer at Digital Creations',
-        'Mobile Apps with React Native',
-        'Modern Web Apps with Next.js & React',
-        'Shopify Themes & WordPress CMS',
-        'IT Infrastructure & Enterprise Security'
+        'Enterprise Biometric Time & Attendance Systems',
+        'Native Desktop Suites (Python 3.14 + React 19)',
+        'Sub-second LAN Biometric Auto-Discovery Radar',
+        'Cloud MERN SaaS Platforms with VietQR Banking',
+        'Hardware-Locked Cryptographic Security Systems'
       ],
-      desc: 'Currently working as a Frontend Developer at Digital Creations. Passionate about building seamless cross-platform mobile apps and high-performance websites with fluid UX/UI.',
+      desc: 'Software Engineer specializing in High-Performance Native Desktop Systems, biometric LAN hardware synchronization, and cloud-native MERN Stack SaaS platforms with automated VietQR payments.',
       contactBtn: 'Get In Touch',
       viewProjectsBtn: 'Explore Projects',
-      statusAvailable: 'Available for collaboration',
-      terminalFile: 'developer.ts',
+      statusAvailable: 'Available for Senior/Lead roles',
+      terminalFile: 'system_architect.ts',
     },
     stats: {
       experienceYears: 'Years Experience',

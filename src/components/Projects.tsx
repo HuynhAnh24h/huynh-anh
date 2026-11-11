@@ -36,6 +36,9 @@ export function Projects({ projects }: ProjectsProps) {
 
   const getCategoryBadge = (cat: ProjectItem['category']) => {
     switch (cat) {
+      case 'desktop':
+      case 'fullstack':
+        return { label: 'Desktop & SaaS', color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' };
       case 'mobile':
         return { label: 'Mobile App', color: 'bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border-[#a0620f]/30 dark:border-[#f5b942]/30' };
       case 'web':
