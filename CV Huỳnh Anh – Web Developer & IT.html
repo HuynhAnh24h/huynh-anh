@@ -9,45 +9,45 @@
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <style>
 :root{
-  --bg:#f8faf9;
+  --bg:#f8f3ec;
   --surface:#ffffff;
-  --line:#e2e8e5;
-  --text:#0f172a;
-  --muted:#475569;
-  --accent:#0284c7;
+  --line:#e7dcce;
+  --text:#2a1f14;
+  --muted:#786352;
+  --accent:#a0620f;
   --accent-ink:#ffffff;
-  --glow:rgba(2,132,199,0.15);
-  --code:#0b1320;
-  --code-text:#e2e8f0;
+  --glow:rgba(160,98,15,0.16);
+  --code:#221a14;
+  --code-text:#f5ece4;
   color-scheme:light;
   box-sizing:border-box;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#070d18;
-    --surface:#0e1726;
-    --line:#1e293b;
-    --text:#f1f5f9;
-    --muted:#94a3b8;
-    --accent:#38bdf8;
-    --accent-ink:#031326;
-    --glow:rgba(56,189,248,0.18);
-    --code:#030712;
-    --code-text:#e2e8f0;
+    --bg:#15110e;
+    --surface:#1e1813;
+    --line:#33281f;
+    --text:#f5ece4;
+    --muted:#b5a393;
+    --accent:#f5b942;
+    --accent-ink:#15110e;
+    --glow:rgba(245,185,66,0.22);
+    --code:#120e0b;
+    --code-text:#f5ece4;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#070d18;
-  --surface:#0e1726;
-  --line:#1e293b;
-  --text:#f1f5f9;
-  --muted:#94a3b8;
-  --accent:#38bdf8;
-  --accent-ink:#031326;
-  --glow:rgba(56,189,248,0.18);
-  --code:#030712;
-  --code-text:#e2e8f0;
+  --bg:#15110e;
+  --surface:#1e1813;
+  --line:#33281f;
+  --text:#f5ece4;
+  --muted:#b5a393;
+  --accent:#f5b942;
+  --accent-ink:#15110e;
+  --glow:rgba(245,185,66,0.22);
+  --code:#120e0b;
+  --code-text:#f5ece4;
   color-scheme:dark;
 }
 html{scroll-behavior:smooth;scroll-padding-top:76px}
@@ -82,7 +82,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
   <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
     <a href="#top" class="font-bold text-lg mono flex items-center gap-2">
       <span class="acc">&lt;</span><span>HuynhAnh</span><span class="acc">/&gt;</span>
-      <span class="text-xs px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-500 border border-sky-500/20 font-sans hidden sm:inline">Lead Software Engineer</span>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--glow)] text-[var(--accent)] border border-[var(--accent)]/30 font-sans hidden sm:inline">Lead Software Engineer</span>
     </a>
     <nav class="hidden md:flex gap-7 text-sm font-semibold muted">
       <a href="#flagship" class="hover:text-[var(--accent)] transition-colors">Dự án KTS</a>
@@ -93,7 +93,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
       <a href="#contact" class="hover:text-[var(--accent)] transition-colors">Liên hệ</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a href="tel:0776980269" class="hidden sm:inline-flex text-xs font-bold text-sky-600 bg-sky-500/10 px-3 py-1.5 rounded-lg border border-sky-500/20">
+      <a href="tel:0776980269" class="hidden sm:inline-flex text-xs font-bold text-[var(--accent)] bg-[var(--glow)] px-3 py-1.5 rounded-lg border border-[var(--accent)]/30">
         📞 0776.980.269
       </a>
       <button id="theme" class="chip cursor-pointer" aria-label="Đổi giao diện">Sáng / Tối</button>
@@ -106,7 +106,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
   <!-- HERO SECTION -->
   <section class="grid lg:grid-cols-12 gap-10 items-center py-14 md:py-22">
     <div class="lg:col-span-7">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 mb-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--glow)] text-[var(--accent)] border border-[var(--accent)]/30 mb-4">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
         <span>Sẵn sàng tiếp nhận vị trí Senior / Lead Software Engineer</span>
       </div>
@@ -182,7 +182,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
   <section id="flagship" class="pb-20">
     <div class="flex items-center justify-between mb-8">
       <div>
-        <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Dự Án Trọng Điểm &bull; Flagship Product</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">Dự Án Trọng Điểm &bull; Flagship Product</span>
         <h2 class="title mt-1">KTS TimeAttendance Enterprise Suite</h2>
       </div>
       <a href="https://kts-time-attendance-ladingpage.vercel.app" target="_blank" rel="noopener" class="hidden sm:inline-flex btn btn-p text-xs">
@@ -191,10 +191,10 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
     </div>
 
     <!-- Product Overview Card -->
-    <div class="card p-6 sm:p-8 mb-8 border-2 border-sky-500/30">
+    <div class="card p-6 sm:p-8 mb-8 border-2 border-[var(--accent)]/40">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-[var(--glow)] text-[var(--accent)] border border-[var(--accent)]/30">
             Hệ Thống Native Desktop + MERN SaaS Độc Quyền
           </span>
           <h3 class="text-2xl font-bold mt-2 text-slate-900 dark:text-white">
@@ -217,7 +217,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
       <!-- 4 Core Pillars -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
         <div class="p-4 rounded-xl bg-slate-500/5 border border-slate-200 dark:border-slate-800">
-          <p class="text-xs font-bold text-sky-600 dark:text-sky-400">01. Hybrid Native App</p>
+          <p class="text-xs font-bold text-[var(--accent)]">01. Hybrid Native App</p>
           <p class="text-xs muted mt-1.5 leading-relaxed">
             Kết hợp Python FastAPI + React 19 nhúng qua Microsoft Edge WebView2, đóng gói 1 App (.exe) duy nhất, mở 0.5s, không bật CMD.
           </p>
@@ -321,9 +321,9 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
       <article class="tl">
         <div class="flex flex-wrap justify-between items-baseline gap-2">
           <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lead Software Engineer & Enterprise System Architect</h3>
-          <span class="mono text-xs font-bold px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400">2025 – HIỆN TẠI</span>
+          <span class="mono text-xs font-bold px-2.5 py-1 rounded-full bg-[var(--glow)] text-[var(--accent)] border border-[var(--accent)]/30">2025 – HIỆN TẠI</span>
         </div>
-        <p class="font-semibold text-sm text-sky-600 dark:text-sky-400 mb-2">KTS Software Enterprise Solutions</p>
+        <p class="font-semibold text-sm text-[var(--accent)] mb-2">KTS Software Enterprise Solutions</p>
         <ul class="list-disc pl-5 space-y-2 muted text-sm leading-relaxed">
           <li><strong>Kiến trúc hệ thống Native Desktop:</strong> Xây dựng trọn gói phần mềm chấm công doanh nghiệp độc quyền bằng Python 3.14 FastAPI backend kết hợp React 19 UI nhúng qua Microsoft Edge WebView2, đóng gói 1 App duy nhất (.exe) không hiện cửa sổ terminal CMD, khởi động cực nhanh 0.5s.</li>
           <li><strong>Radar quét mạng LAN siêu tốc:</strong> Phát triển engine rà quét 254 IP mạng nội bộ qua cổng 4370 TCP/UDP bằng 64 workers trong kỷ lục 0.7 giây, tự động nhận diện thiết bị ZKTeco, Ronald Jack, Gigata T9 và đồng bộ vân tay 1-Click.</li>
@@ -453,7 +453,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
         <span>🎓</span> <span>Học Vấn Chính Quy</span>
       </h2>
       <h3 class="font-bold text-lg text-slate-900 dark:text-white">Đại học Công nghệ TP.HCM (HUTECH)</h3>
-      <p class="mono text-xs font-semibold text-sky-600 dark:text-sky-400 mt-1">2017 – 2023</p>
+      <p class="mono text-xs font-semibold text-[var(--accent)] mt-1">2017 – 2023</p>
       <p class="muted text-xs mt-3 leading-relaxed">
         <strong>Cử nhân Công nghệ Thông tin – Chuyên ngành Kỹ thuật Phần mềm (Software Engineering).</strong><br>
         Tốt nghiệp hệ chính quy, trang bị nền tảng chuyên sâu về thuật toán, kiến trúc hệ thống, phát triển ứng dụng đa nền tảng và quản trị mạng máy tính.
@@ -483,7 +483,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
 
   <!-- CONTACT & FOOTER -->
   <section id="contact" class="pb-20">
-    <div class="card p-8 text-center max-w-3xl mx-auto border-2 border-sky-500/30">
+    <div class="card p-8 text-center max-w-3xl mx-auto border-2 border-[var(--accent)]/40">
       <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
         Sẵn Sàng Hợp Tác & Nhận Dự Án Mới
       </h2>
@@ -563,7 +563,7 @@ pre.code-block{background:var(--code);color:var(--code-text);border:1px solid va
     ['engineer = Engineer()\n', ''],
     ['print(f"Loaded: {engineer.flagship_system}")', 'v']
   ];
-  var cols = { k: '#38bdf8', v: '#34d399', s: '#f59e0b', c: '#64748b', '': '#e2e8f0' };
+  var cols = { k: '#f5b942', v: '#34d399', s: '#e08f24', c: '#a89485', '': '#f5ece4' };
   var pre = document.getElementById('code');
   function esc(t){ return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
   var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;

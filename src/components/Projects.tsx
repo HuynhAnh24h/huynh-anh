@@ -54,13 +54,13 @@ export function Projects({ projects }: ProjectsProps) {
 
         {/* Flagship Hero Showcase Card */}
         {flagshipProject && (
-          <div className="rounded-3xl border-2 border-[#a0620f]/40 dark:border-[#f5b942]/40 bg-white/95 dark:bg-[#1a1410]/95 shadow-2xl shadow-[#a0620f]/10 dark:shadow-[#f5b942]/10 overflow-hidden">
+          <div className="rounded-3xl border-2 border-[#a0620f]/40 dark:border-[#f5b942]/40 bg-white/95 dark:bg-[#1e1813]/95 shadow-2xl shadow-[#a0620f]/10 dark:shadow-[#f5b942]/10 overflow-hidden">
             
             {/* Top Bar Preview */}
             <div className="p-6 sm:p-8 border-b border-[#e7dcce] dark:border-[#33281f] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 mb-3">
-                  <Cpu className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30 mb-3">
+                  <Cpu className="w-3.5 h-3.5 text-[#a0620f] dark:text-[#f5b942]" />
                   <span>Desktop Native App + Cloud MERN Serverless</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-[#2a1f14] dark:text-[#f5ece4] tracking-tight">
@@ -75,7 +75,7 @@ export function Projects({ projects }: ProjectsProps) {
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
                 <button
                   onClick={() => setIsDetailOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white shadow-lg shadow-sky-600/25 transition-all hover:scale-[1.02] cursor-pointer"
+                  className="btn-shimmer inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm bg-[#a0620f] hover:bg-[#854f0a] dark:bg-[#f5b942] dark:hover:bg-[#df9b20] text-white dark:text-[#15110e] shadow-lg shadow-[#a0620f]/20 dark:shadow-[#f5b942]/25 hover:shadow-xl hover:shadow-[#a0620f]/30 dark:hover:shadow-[#f5b942]/35 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>{lang === 'vi' ? 'Xem Chi Tiết Dự Án & Vận Hành' : 'View Architecture & Operations'}</span>
@@ -85,18 +85,18 @@ export function Projects({ projects }: ProjectsProps) {
                   href={flagshipProject.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs bg-[#f8f3ec] dark:bg-[#272019] text-[#2a1f14] dark:text-[#f5ece4] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors border border-[#e7dcce] dark:border-[#33281f]"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4 text-[#a0620f] dark:text-[#f5b942]" />
                   <span>Live Web Portal ↗</span>
                 </a>
               </div>
             </div>
 
             {/* 4 Architectural Highlights */}
-            <div className="p-6 sm:p-8 bg-slate-500/5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-4 rounded-2xl bg-white dark:bg-[#201913] border border-[#e7dcce] dark:border-[#33281f]">
-                <div className="w-8 h-8 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-3">
+            <div className="p-6 sm:p-8 bg-[#f8f3ec]/50 dark:bg-[#15110e]/50 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-4 rounded-2xl bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors">
+                <div className="w-8 h-8 rounded-xl bg-[#a0620f]/10 dark:bg-[#f5b942]/15 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/20 dark:border-[#f5b942]/30 flex items-center justify-center mb-3">
                   <Cpu className="w-4 h-4" />
                 </div>
                 <h4 className="font-bold text-xs text-[#2a1f14] dark:text-[#f5ece4] mb-1">
@@ -107,8 +107,8 @@ export function Projects({ projects }: ProjectsProps) {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white dark:bg-[#201913] border border-[#e7dcce] dark:border-[#33281f]">
-                <div className="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3">
+              <div className="p-4 rounded-2xl bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors">
+                <div className="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center justify-center mb-3">
                   <Network className="w-4 h-4" />
                 </div>
                 <h4 className="font-bold text-xs text-[#2a1f14] dark:text-[#f5ece4] mb-1">
@@ -119,8 +119,8 @@ export function Projects({ projects }: ProjectsProps) {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white dark:bg-[#201913] border border-[#e7dcce] dark:border-[#33281f]">
-                <div className="w-8 h-8 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-3">
+              <div className="p-4 rounded-2xl bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors">
+                <div className="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center justify-center mb-3">
                   <FileSpreadsheet className="w-4 h-4" />
                 </div>
                 <h4 className="font-bold text-xs text-[#2a1f14] dark:text-[#f5ece4] mb-1">
@@ -131,8 +131,8 @@ export function Projects({ projects }: ProjectsProps) {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white dark:bg-[#201913] border border-[#e7dcce] dark:border-[#33281f]">
-                <div className="w-8 h-8 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-3">
+              <div className="p-4 rounded-2xl bg-white dark:bg-[#1e1813] border border-[#e7dcce] dark:border-[#33281f] hover:border-[#a0620f]/40 dark:hover:border-[#f5b942]/40 transition-colors">
+                <div className="w-8 h-8 rounded-xl bg-[#a0620f]/15 dark:bg-[#f5b942]/20 text-[#a0620f] dark:text-[#f5b942] border border-[#a0620f]/30 dark:border-[#f5b942]/40 flex items-center justify-center mb-3">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <h4 className="font-bold text-xs text-[#2a1f14] dark:text-[#f5ece4] mb-1">
@@ -162,17 +162,17 @@ export function Projects({ projects }: ProjectsProps) {
                   href="https://github.com/HuynhAnh24h/kts-cham-cong"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#786352] dark:text-[#b5a393] hover:text-sky-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#786352] dark:text-[#b5a393] hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-colors"
                 >
                   <GithubIcon className="w-4 h-4" />
                   <span>Desktop Repo</span>
                 </a>
-                <span className="text-slate-300 dark:text-slate-700">&bull;</span>
+                <span className="text-[#e7dcce] dark:text-[#33281f]">&bull;</span>
                 <a
                   href="https://github.com/HuynhAnh24h/KTS_TimeAttendance_ladingpage"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#786352] dark:text-[#b5a393] hover:text-sky-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#786352] dark:text-[#b5a393] hover:text-[#a0620f] dark:hover:text-[#f5b942] transition-colors"
                 >
                   <GithubIcon className="w-4 h-4" />
                   <span>SaaS Repo</span>
